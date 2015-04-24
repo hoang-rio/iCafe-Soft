@@ -289,6 +289,21 @@ namespace iCafe.Userform
                 var btController = new BookTableController(mobjConnection, mobjSecurity);
                 btController.Update(objBtTable);
                 SetValue();
+                var objDtTable = new iCafeDataEn.iCafe_BookTableDetailDataTable();
+                var dtRow = new iCafeDataEn.iCafe_BookTableDetailRow[objBTdtTable.Rows.Count];
+                for (var i = 0; i < objBTdtTable.Rows.Count; i++)
+                {
+                    dtRow[i] = objDtTable.NewiCafe_BookTableDetailRow();
+                    dtRow[i].BTableID = (Guid)objBTdtTable.Rows[i]["BTableID"];
+                    dtRow[i].FoodID = (Guid)objBTdtTable.Rows[i]["FoodID"];
+                    dtRow[i].Quantity = (Decimal)objBTdtTable.Rows[i]["Quantity"];
+                    dtRow[i].TotalPrice = (Decimal)objBTdtTable.Rows[i]["TotalPrice"];
+
+                    objDtTable.Rows.Add(dtRow[i]);
+                }
+
+                var btController = new BookTableController(mobjConnection, mobjSecurity);
+                btController.AddNew(objBtTable, objDtTable);
                 XtraMessageBox.Show("Cập nhật thành công");
             }
             catch (NullReferenceException)

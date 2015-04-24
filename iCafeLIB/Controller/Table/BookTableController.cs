@@ -19,6 +19,7 @@ namespace iCafeLIB.Controller.Table
         private const string SP_BOOKTABLEDETAIL_DELETE = "SP_BOOKTABLEDETAIL_DELETE";
         private const string SP_BOOKTABLE_DELETE = "SP_BOOKTABLE_DELETE";
         private const string SP_BOOKTABLEDETAIL_BYBTABLEID = "SP_BOOKTABLEDETAIL_BYBTABLEID";
+        private const string SP_BOOKTABLEDETAIL_CLEAR = "SP_BOOKTABLEDETAIL_CLEAR";
         private readonly SqlConnection m_objConnection;
         private readonly ModelsInfo m_objModelsinfo;
         private SecurityContext m_objSecurity;
@@ -151,7 +152,8 @@ namespace iCafeLIB.Controller.Table
         ///     Update bookTable
         /// </summary>
         /// <param name="objTable"></param>
-        public void Update(iCafeDataEn.iCafe_BookTableDataTable objTable)
+        public void Update(iCafeDataEn.iCafe_BookTableDataTable objTable, 
+            iCafeDataEn.iCafe_BookTableDetailDataTable objBTdtTable)
         {
             try
             {
@@ -170,6 +172,8 @@ namespace iCafeLIB.Controller.Table
                 if (Check(objTable))
                 {
                     m_objModelsinfo.ExecProcNoReturn(SP_BOOKTABLE_UPDATE, param);
+                    Clear_BtDetail(row.BTableID.ToString());
+                    AddNew_BtDetail(objBTdtTable);
                 }
                 else
                 {
@@ -207,6 +211,19 @@ namespace iCafeLIB.Controller.Table
             }
         }
 
+        private void Clear_BtDetail(string BTableID)
+        {
+            try
+            {
+                var param = new SqlParameter[1];
+                param[0] = new SqlParameter("@BTableID", BTableID);
+                m_objModelsinfo.ExecProcNoReturn(SP_BOOKTABLEDETAIL_CLEAR, param);
+            }
+            catch (Exception exception)
+            {
+                throw exception;
+            }
+        }
         /// <summary>
         ///     Xóa đặt bàn
         /// </summary>
