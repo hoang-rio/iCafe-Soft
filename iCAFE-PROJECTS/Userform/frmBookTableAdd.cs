@@ -286,8 +286,6 @@ namespace iCafe.Userform
                 objBtTable.Rows.Add(row);
                 //-------------------------------------------------------//                
 
-                var btController = new BookTableController(mobjConnection, mobjSecurity);
-                btController.Update(objBtTable);
                 SetValue();
                 var objDtTable = new iCafeDataEn.iCafe_BookTableDetailDataTable();
                 var dtRow = new iCafeDataEn.iCafe_BookTableDetailRow[objBTdtTable.Rows.Count];
@@ -303,7 +301,7 @@ namespace iCafe.Userform
                 }
 
                 var btController = new BookTableController(mobjConnection, mobjSecurity);
-                btController.AddNew(objBtTable, objDtTable);
+                btController.Update(objBtTable,objDtTable);
                 XtraMessageBox.Show("Cập nhật thành công");
             }
             catch (NullReferenceException)
