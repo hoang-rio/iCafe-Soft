@@ -59,8 +59,8 @@ namespace iCafe.Userform
             ZoneLoad();
             TableByZone();
             ucUpdate1.btnFDong.ItemClick += Close_Click;
-            ucSimpleControl1.btnFXoa.ItemClick += BookTableDetailDelete_Click;
-            ucSimpleControl1.btnThemmoi.ItemClick += BookTableDetailAdd_Click;
+            ucSimpleControl1.btnFXoa.ItemClick += Delete_Food;
+            ucSimpleControl1.btnThemmoi.ItemClick += AddFood;
             ucUpdate1.btnFCapNhat.ItemClick += Update_Click;
             ucSimpleControl1.btnEdit.ItemClick += Edit_Food_Click;
             gridView1.ValidateRow += Quantity_Validate;
