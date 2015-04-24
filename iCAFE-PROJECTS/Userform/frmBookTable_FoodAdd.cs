@@ -46,35 +46,6 @@ namespace iCafe.Userform
             ucUpdate1.btnFDong.ItemClick += Close_Click;
         }
 
-        /// <summary>
-        ///     Hàm tạo sửa
-        /// </summary>
-        /// <param name="CSDL"></param>
-        /// <param name="objTable"></param>
-        /// <param name="objBTableID"></param>
-        /// <param name="objConnection"></param>
-        /// <param name="objSecurityContext"></param>
-        public frmBookTable_FoodAdd(bool CSDL, DataTable objTable, Guid objBTableID, SqlConnection objConnection,
-            SecurityContext objSecurityContext)
-        {
-            InitializeComponent();
-            mobjConnection = objConnection;
-            mobjSecurity = objSecurityContext;
-            objBTdtTable = objTable;
-            BTableID = objBTableID;
-            FoodGroup_Load();
-            columns = GetColumns(objTable);
-            if (columns.Contains("BGID"))
-            {
-                ucUpdate1.btnFCapNhat.ItemClick += Add_CSDL_Ballot_Click;
-            }
-            else
-            {
-                ucUpdate1.btnFCapNhat.ItemClick += Add_CSDL_Click;
-            }
-            ucUpdate1.btnFDong.ItemClick += Close_Click;
-        }
-
         private static DataColumnCollection GetColumns(DataTable objTable)
         {
             var columns = objTable.Columns;
@@ -160,67 +131,6 @@ namespace iCafe.Userform
                                                 (Decimal) view.GetRowCellValue(view.FocusedRowHandle, "FPrice"));
                     objBTdtTable.Rows.Add(objBTdtRow);
                 }
-                Text = "Thêm thành công";
-            }
-            catch (Exception exception)
-            {
-                XtraMessageBox.Show("Đã có lỗi. Chi tiết: " + exception.Message);
-            }
-        }
-
-        private void Add_CSDL_Ballot_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var objBallotTable = new iCafeDataEn.iCafe_BallotDetailDataTable();
-                var row = objBallotTable.NewiCafe_BallotDetailRow();
-                objBTdtRow = objBTdtTable.NewRow();
-                var view = lookFood.Properties.View;
-                row.BGID = BTableID;
-                row.FoodID = (Guid) view.GetRowCellValue(view.FocusedRowHandle, "FoodID");
-                row.Quantity = spinQuantity.Value;
-                //--------------------------------------------------//
-                objBTdtRow["BGID"] = BTableID;
-                objBTdtRow["FoodID"] = (Guid) view.GetRowCellValue(view.FocusedRowHandle, "FoodID");
-                objBTdtRow["Quantity"] = spinQuantity.Value;
-                //-------------------------------------------------//
-                objBallotTable.Rows.Add(row);
-                var ballotController = new BallotDetailController(mobjConnection, mobjSecurity);
-                ballotController.AddNew(objBallotTable);
-                objBTdtTable.Rows.Add(objBTdtRow);
-                Text = "Thêm thành công";
-            }
-            catch (Exception exception)
-            {
-                XtraMessageBox.Show("Đã có lỗi. Chi tiết: " + exception.Message);
-            }
-        }
-
-        private void Add_CSDL_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var objBTdtTale = new iCafeDataEn.iCafe_BookTableDetailDataTable();
-                var row = objBTdtTale.NewiCafe_BookTableDetailRow();
-                objBTdtRow = objBTdtTable.NewRow();
-                var view = lookFood.Properties.View;
-                row.BTableID = BTableID;
-                row.FoodID = (Guid) view.GetRowCellValue(view.FocusedRowHandle, "FoodID");
-                row.TotalPrice = (spinQuantity.Value*(Decimal) view.GetRowCellValue(view.FocusedRowHandle, "FPrice"));
-                row.Quantity = spinQuantity.Value;
-                //--------------------------------------------------//
-                objBTdtRow["BTableID"] = BTableID;
-                objBTdtRow["FoodID"] = (Guid) view.GetRowCellValue(view.FocusedRowHandle, "FoodID");
-                objBTdtRow["Quantity"] = spinQuantity.Value;
-                objBTdtRow["FoodName"] = view.GetRowCellValue(view.FocusedRowHandle, "FoodName");
-                objBTdtRow["FUnit"] = view.GetRowCellValue(view.FocusedRowHandle, "FUnit");
-                objBTdtRow["TotalPrice"] = (spinQuantity.Value*
-                                            (Decimal) view.GetRowCellValue(view.FocusedRowHandle, "FPrice"));
-                //-------------------------------------------------//
-                objBTdtTale.Rows.Add(row);
-                var btController = new BookTableController(mobjConnection, mobjSecurity);
-                btController.AddNew_BtDetail(objBTdtTale);
-                objBTdtTable.Rows.Add(objBTdtRow);
                 Text = "Thêm thành công";
             }
             catch (Exception exception)
