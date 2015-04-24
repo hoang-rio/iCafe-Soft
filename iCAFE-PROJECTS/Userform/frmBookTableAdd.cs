@@ -260,40 +260,6 @@ namespace iCafe.Userform
                 GetBookTableDetail();
             }
         }
-
-        private void BookTableDetailDelete_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var btController = new BookTableController(mobjConnection, mobjSecurity);
-                var objTable = new iCafeDataEn.iCafe_BookTableDetailDataTable();
-                var row = objTable.NewiCafe_BookTableDetailRow();
-                row.BTableID = (Guid) gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "BTableID");
-                row.FoodID = (Guid) gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "FoodID");
-                objTable.Rows.Add(row);
-                btController.Delete_Detail(objTable);
-                gridView1.DeleteSelectedRows();
-                XtraMessageBox.Show("Xóa thành công");
-            }
-            catch (Exception exception)
-            {
-                XtraMessageBox.Show("Đã có lỗi. Chi tiết: " + exception.Message);
-            }
-        }
-
-        private void BookTableDetailAdd_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var frm = new frmBookTable_FoodAdd(true, objBTdtTable, BTableID, mobjConnection, mobjSecurity);
-                frm.ShowDialog();
-            }
-            catch (Exception exception)
-            {
-                XtraMessageBox.Show("Đã có lỗi. Chi tiết: " + exception.Message);
-            }
-        }
-
         private void Update_Click(object sender, EventArgs e)
         {
             try
