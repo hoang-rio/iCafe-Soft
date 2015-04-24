@@ -1,0 +1,937 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FDFA6B91-1D85-495B-AC35-6F834CFC4A2B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iCafe</RootNamespace>
+    <AssemblyName>iCafe</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>iCafe.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Win.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.Base.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v12.1.Core, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v12.1.Core, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v12.1.Core, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseControls\ucBaseController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseControls\ucBaseController.designer.cs">
+      <DependentUpon>ucBaseController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseControls\ucSimpleControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseControls\ucSimpleControl.Designer.cs">
+      <DependentUpon>ucSimpleControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseControls\ucUpdate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseControls\ucUpdate.Designer.cs">
+      <DependentUpon>ucUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Commons\Services.cs" />
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucImportExport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucImportExport.Designer.cs">
+      <DependentUpon>ucImportExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucTableByZone.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucTableByZone.Designer.cs">
+      <DependentUpon>ucTableByZone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userform\frmEmloyeeSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userform\frmEmloyeeSearch.Designer.cs">
+      <DependentUpon>frmEmloyeeSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userform\frmIEDetail_MaterialAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userform\frmIEDetail_MaterialAdd.Designer.cs">
+      <DependentUpon>frmIEDetail_MaterialAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userform\frmSalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userform\frmSalary.Designer.cs">
+      <DependentUpon>frmSalary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucBallotGood.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucBallotGood.designer.cs">
+      <DependentUpon>ucBallotGood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userform\frmBallotGoodAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userform\frmBallotGoodAdd.designer.cs">
+      <DependentUpon>frmBallotGoodAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userform\frmSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userform\frmSplash.Designer.cs">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucBill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucBill.Designer.cs">
+      <DependentUpon>ucBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucTableEmpty.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucTableEmpty.Designer.cs">
+      <DependentUpon>ucTableEmpty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucBonusPunish.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucBonusPunish.Designer.cs">
+      <DependentUpon>ucBonusPunish.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucFood.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucFood.Designer.cs">
+      <DependentUpon>ucFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucPermission.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucPermission.Designer.cs">
+      <DependentUpon>ucPermission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucSupplier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucSupplier.Designer.cs">
+      <DependentUpon>ucSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucTable.Designer.cs">
+      <DependentUpon>ucTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucToolbar-Right.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucToolbar-Right.Designer.cs">
+      <DependentUpon>ucToolbar-Right.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucEvent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucEvent.Designer.cs">
+      <DependentUpon>ucEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucMaterial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucMaterial.Designer.cs">
+      <DependentUpon>ucMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucCustomer.Designer.cs">
+      <DependentUpon>ucCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucEmployee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucEmployee.Designer.cs">
+      <DependentUpon>ucEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucMenu.Designer.cs">
+      <DependentUpon>ucMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucSales.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucSales.Designer.cs">
+      <DependentUpon>ucSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucBookTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucBookTable.Designer.cs">
+      <DependentUpon>ucBookTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucSalesMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucSalesMain.Designer.cs">
+      <DependentUpon>ucSalesMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucWorkShift.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucWorkShift.Designer.cs">
+      <DependentUpon>ucWorkShift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucZone.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucZone.Designer.cs">
+      <DependentUpon>ucZone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userform\frmChangeWS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userform\frmChangeWS.Designer.cs">
+      <DependentUpon>frmChangeWS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userform\frmBillEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userform\frmBillEdit.designer.cs">
+      <DependentUpon>frmBillEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userform\frmBonusPunishAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userform\frmBonusPunishAdd.Designer.cs">
+      <DependentUpon>frmBonusPunishAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userform\frmBookTableAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userform\frmBookTableAdd.Designer.cs">
+      <DependentUpon>frmBookTableAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userform\frmBookTable_FoodAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userform\frmBookTable_FoodAdd.Designer.cs">
+      <DependentUpon>frmBookTable_FoodAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userform\frmChangDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userform\frmChangDiscount.Designer.cs">
+      <DependentUpon>frmChangDiscount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userform\frmChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userform\frmChangePass.Designer.cs">
+      <DependentUpon>frmChangePass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userform\frmChangePer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userform\frmChangePer.Designer.cs">
+      <DependentUpon>frmChangePer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userform\frmEmployAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userform\frmEmployAdd.Designer.cs">
+      <DependentUpon>frmEmployAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userform\frmEventAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userform\frmEventAdd.designer.cs">
+      <DependentUpon>frmEventAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userform\frmFontEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userform\frmFontEdit.Designer.cs">
+      <DependentUpon>frmFontEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userform\frmFoodAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userform\frmFoodAdd.Designer.cs">
+      <DependentUpon>frmFoodAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userform\frmFoodGroupAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userform\frmFoodGroupAdd.Designer.cs">
+      <DependentUpon>frmFoodGroupAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userform\frmImportExportAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userform\frmImportExportAdd.Designer.cs">
+      <DependentUpon>frmImportExportAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userform\frmMaterialAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userform\frmMaterialAdd.Designer.cs">
+      <DependentUpon>frmMaterialAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userform\frmCustomerAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userform\frmCustomerAdd.Designer.cs">
+      <DependentUpon>frmCustomerAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userform\frmPermissionAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userform\frmPermissionAdd.Designer.cs">
+      <DependentUpon>frmPermissionAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userform\frmSupplierAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userform\frmSupplierAdd.Designer.cs">
+      <DependentUpon>frmSupplierAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userform\frmTableAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userform\frmTableAdd.Designer.cs">
+      <DependentUpon>frmTableAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userform\frmUserlogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userform\frmUserlogin.Designer.cs">
+      <DependentUpon>frmUserlogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userform\frmwait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userform\frmwait.Designer.cs">
+      <DependentUpon>frmwait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userform\frmWorkShiftAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userform\frmWorkShiftAdd.Designer.cs">
+      <DependentUpon>frmWorkShiftAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Userform\frmZoneAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Userform\frmZoneAdd.Designer.cs">
+      <DependentUpon>frmZoneAdd.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BaseControls\ucBaseController.resx">
+      <DependentUpon>ucBaseController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseControls\ucSimpleControl.resx">
+      <DependentUpon>ucSimpleControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseControls\ucUpdate.resx">
+      <DependentUpon>ucUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucImportExport.resx">
+      <DependentUpon>ucImportExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucTableByZone.resx">
+      <DependentUpon>ucTableByZone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userform\frmEmloyeeSearch.resx">
+      <DependentUpon>frmEmloyeeSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userform\frmIEDetail_MaterialAdd.resx">
+      <DependentUpon>frmIEDetail_MaterialAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userform\frmSalary.resx">
+      <DependentUpon>frmSalary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucBallotGood.resx">
+      <DependentUpon>ucBallotGood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userform\frmBallotGoodAdd.resx">
+      <DependentUpon>frmBallotGoodAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userform\frmSplash.resx">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucBill.resx">
+      <DependentUpon>ucBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucTableEmpty.resx">
+      <DependentUpon>ucTableEmpty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucBonusPunish.resx">
+      <DependentUpon>ucBonusPunish.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucFood.resx">
+      <DependentUpon>ucFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucPermission.resx">
+      <DependentUpon>ucPermission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucSupplier.resx">
+      <DependentUpon>ucSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucTable.resx">
+      <DependentUpon>ucTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucToolbar-Right.resx">
+      <DependentUpon>ucToolbar-Right.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucEvent.resx">
+      <DependentUpon>ucEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucMaterial.resx">
+      <DependentUpon>ucMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucCustomer.resx">
+      <DependentUpon>ucCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucEmployee.resx">
+      <DependentUpon>ucEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucMenu.resx">
+      <DependentUpon>ucMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucSales.resx">
+      <DependentUpon>ucSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucBookTable.resx">
+      <DependentUpon>ucBookTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucSalesMain.resx">
+      <DependentUpon>ucSalesMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucWorkShift.resx">
+      <DependentUpon>ucWorkShift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucZone.resx">
+      <DependentUpon>ucZone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userform\frmChangeWS.resx">
+      <DependentUpon>frmChangeWS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userform\frmBillEdit.resx">
+      <DependentUpon>frmBillEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userform\frmBonusPunishAdd.resx">
+      <DependentUpon>frmBonusPunishAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userform\frmBookTableAdd.resx">
+      <DependentUpon>frmBookTableAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userform\frmBookTable_FoodAdd.resx">
+      <DependentUpon>frmBookTable_FoodAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userform\frmChangDiscount.resx">
+      <DependentUpon>frmChangDiscount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userform\frmChangePass.resx">
+      <DependentUpon>frmChangePass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userform\frmChangePer.resx">
+      <DependentUpon>frmChangePer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userform\frmEmployAdd.resx">
+      <DependentUpon>frmEmployAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userform\frmEventAdd.resx">
+      <DependentUpon>frmEventAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userform\frmFontEdit.resx">
+      <DependentUpon>frmFontEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userform\frmFoodAdd.resx">
+      <DependentUpon>frmFoodAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userform\frmFoodGroupAdd.resx">
+      <DependentUpon>frmFoodGroupAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userform\frmImportExportAdd.resx">
+      <DependentUpon>frmImportExportAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userform\frmMaterialAdd.resx">
+      <DependentUpon>frmMaterialAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userform\frmCustomerAdd.resx">
+      <DependentUpon>frmCustomerAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userform\frmPermissionAdd.resx">
+      <DependentUpon>frmPermissionAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userform\frmSupplierAdd.resx">
+      <DependentUpon>frmSupplierAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userform\frmTableAdd.resx">
+      <DependentUpon>frmTableAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userform\frmUserlogin.resx">
+      <DependentUpon>frmUserlogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userform\frmwait.resx">
+      <DependentUpon>frmwait.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userform\frmWorkShiftAdd.resx">
+      <DependentUpon>frmWorkShiftAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userform\frmZoneAdd.resx">
+      <DependentUpon>frmZoneAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\onebit_18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\onebit_17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\onebit_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\onebit_04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\office-address-book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Statistics PieChart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clipboard b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\onebit_171.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x-office-address-book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calender Month.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calender day.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\personal-information128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cash 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money gold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail-receive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Crate Upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\onebit_39.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\onebit_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forsale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forsale1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forsale11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table-icon11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kuser32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x-office-address-book1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Crate Download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help-desk48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Documents.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Team-Viewer-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Orb info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application-vnd.openxmlformats-officedocument.wordprocessingml.document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cash-register-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Task-Manager-Info-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Task-Manager-Info-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coffee32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\task_completed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_bonus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playByPlayRedCard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\laws-icon-cube.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\personal-information48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Money silver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\code16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mypc_search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InvoiceSearch-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search-Good-32 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\View_QR_code.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search house.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\iCafeLIB\iCafeLIB.csproj">
+      <Project>{8d90716e-ee18-42d7-aebd-37d83f438064}</Project>
+      <Name>iCafeLIB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system_preferences.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\font_o_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\weather_clear_night.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Report-Edit-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\renew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DayMode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kate32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\action_settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="iCafe.ico" />
+    <None Include="Resources\People-48.png" />
+    <None Include="Resources\money_48.png" />
+    <None Include="Resources\gear_16.png" />
+    <None Include="Resources\personal-information16.png" />
+    <None Include="Resources\eye.png" />
+    <None Include="Resources\Credit-48.png" />
+    <None Include="Resources\Time_48.png" />
+    <None Include="Resources\iCafe.jpg" />
+    <None Include="Resources\iCafe2.bmp" />
+    <None Include="Resources\medical_invoice_information.png" />
+    <None Include="Resources\emblem_money.png" />
+    <None Include="Resources\cheff.png" />
+    <None Include="Resources\green_dollar.png" />
+    <None Include="Resources\printer1.png" />
+    <None Include="Resources\check.png" />
+    <None Include="Resources\OS-Mac-OS-X-32.png" />
+    <None Include="Resources\White-Sofa-32.png" />
+    <None Include="Resources\Wooden-Table-32.png" />
+    <None Include="Resources\location-32.png" />
+    <None Include="Resources\folder161.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

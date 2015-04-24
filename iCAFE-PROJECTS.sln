@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCafe", "iCAFE-PROJECTS\iCafe.csproj", "{FDFA6B91-1D85-495B-AC35-6F834CFC4A2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCafeLIB", "iCafeLIB\iCafeLIB.csproj", "{8D90716E-EE18-42D7-AEBD-37D83F438064}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDFA6B91-1D85-495B-AC35-6F834CFC4A2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDFA6B91-1D85-495B-AC35-6F834CFC4A2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDFA6B91-1D85-495B-AC35-6F834CFC4A2B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FDFA6B91-1D85-495B-AC35-6F834CFC4A2B}.Debug|x86.Build.0 = Debug|Any CPU
+		{FDFA6B91-1D85-495B-AC35-6F834CFC4A2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDFA6B91-1D85-495B-AC35-6F834CFC4A2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDFA6B91-1D85-495B-AC35-6F834CFC4A2B}.Release|x86.ActiveCfg = Release|x86
+		{FDFA6B91-1D85-495B-AC35-6F834CFC4A2B}.Release|x86.Build.0 = Release|x86
+		{8D90716E-EE18-42D7-AEBD-37D83F438064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D90716E-EE18-42D7-AEBD-37D83F438064}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D90716E-EE18-42D7-AEBD-37D83F438064}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8D90716E-EE18-42D7-AEBD-37D83F438064}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D90716E-EE18-42D7-AEBD-37D83F438064}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D90716E-EE18-42D7-AEBD-37D83F438064}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = .
+	EndGlobalSection
+EndGlobal
