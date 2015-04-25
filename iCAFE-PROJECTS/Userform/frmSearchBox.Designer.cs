@@ -1,6 +1,6 @@
 ﻿namespace iCafe.Userform
 {
-    partial class frmEmloyeeSearch
+    partial class frmSearchBox
     {
         /// <summary>
         /// Required designer variable.

@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Data.SqlClient;
 using DevExpress.XtraEditors;
+using DevExpress.XtraRichEdit.API.Word;
 using iCafeLIB.Models.BaseUntils;
 
 namespace iCafe.Commons
@@ -24,7 +25,7 @@ namespace iCafe.Commons
             }
             catch (Exception ex)
             {
-                XtraMessageBox.Show("Lỗi kết nối. Chi tiết: " + ex.Message);
+                throw ex;
             }
             finally
             {

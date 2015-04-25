@@ -6,13 +6,13 @@ using iCafeLIB.Controller.Security;
 
 namespace iCafe.Userform
 {
-    public partial class frmEmloyeeSearch : XtraForm
+    public partial class frmSearchBox : XtraForm
     {
         private readonly SqlConnection mobjConnection;
         private readonly SecurityContext mobjSecurity;
         private readonly int Stype;
 
-        public frmEmloyeeSearch(int Type, SqlConnection objConnection, SecurityContext objSecurityContext)
+        public frmSearchBox(int Type, SqlConnection objConnection, SecurityContext objSecurityContext)
         {
             mobjConnection = objConnection;
             mobjSecurity = objSecurityContext;
@@ -49,9 +49,9 @@ namespace iCafe.Userform
                 lookWS.Properties.DataSource = WSCtrl.GetAll();
                 lookWS.Properties.DisplayMember = "WSName";
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-                throw;
+                XtraMessageBox.Show("Đã có lỗi. Chi tiết: " + exception.Message);
             }
         }
 

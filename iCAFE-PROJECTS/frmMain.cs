@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using DevExpress.LookAndFeel;
 using DevExpress.XtraBars;
@@ -81,10 +82,22 @@ namespace iCafe
                 m_objSecurity = new SecurityContext();
                 m_objUserController = new userController(m_objConnection, m_objSecurity);
             }
-            catch (SqlException)
+            catch (SqlException exception)
             {
-                XtraMessageBox.Show("Lỗi kết nối. Hãy thử lại sau");
-                Application.Exit();
+                DialogResult check=XtraMessageBox.Show("Chi tiết: " + exception.Message, "Lỗi kết nối. Hãy thử lại sau",MessageBoxButtons.AbortRetryIgnore,MessageBoxIcon.Error);
+                if (check != DialogResult.Retry)
+                {
+                    Application.Exit();
+                }
+                else
+                {
+                    if (File.Exists(Application.StartupPath + "\\iCafe.exe"))
+                    {
+                        Process.Start(Application.StartupPath + "\\iCafe.exe");
+                    }
+                    Application.Exit();    
+                }
+               
             }
         }
 
@@ -800,7 +813,7 @@ namespace iCafe
                 {
                     PanelMain.Controls.Clear();
                     SplashScreenManager.ShowForm((typeof (frmwait)));
-                    var EmS = new frmEmloyeeSearch(0, m_objConnection, m_objSecurity);
+                    var EmS = new frmSearchBox(0, m_objConnection, m_objSecurity);
                     SplashScreenManager.CloseForm();
                     EmS.ShowDialog();
                     if (!EmS.IsDisposed)
@@ -829,7 +842,7 @@ namespace iCafe
                 if (m_objSecurity._fc_system)
                 {
                     PanelMain.Controls.Clear();
-                    var EmS = new frmEmloyeeSearch(1, m_objConnection, m_objSecurity);
+                    var EmS = new frmSearchBox(1, m_objConnection, m_objSecurity);
                     EmS.ShowDialog();
                     if (!EmS.IsDisposed)
                     {
@@ -899,7 +912,7 @@ namespace iCafe
                 if (m_objSecurity._fc_system)
                 {
                     PanelMain.Controls.Clear();
-                    var EmS = new frmEmloyeeSearch(0, m_objConnection, m_objSecurity);
+                    var EmS = new frmSearchBox(0, m_objConnection, m_objSecurity);
                     EmS.ShowDialog();
                     if (!EmS.IsDisposed)
                     {

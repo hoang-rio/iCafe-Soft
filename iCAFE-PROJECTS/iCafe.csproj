@@ -182,11 +182,11 @@
     <Compile Include="UserControls\ucTableByZone.Designer.cs">
       <DependentUpon>ucTableByZone.cs</DependentUpon>
     </Compile>
-    <Compile Include="Userform\frmEmloyeeSearch.cs">
+    <Compile Include="Userform\frmSearchBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Userform\frmEmloyeeSearch.Designer.cs">
-      <DependentUpon>frmEmloyeeSearch.cs</DependentUpon>
+    <Compile Include="Userform\frmSearchBox.Designer.cs">
+      <DependentUpon>frmSearchBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Userform\frmIEDetail_MaterialAdd.cs">
       <SubType>Form</SubType>
@@ -488,8 +488,8 @@
     <EmbeddedResource Include="UserControls\ucTableByZone.resx">
       <DependentUpon>ucTableByZone.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Userform\frmEmloyeeSearch.resx">
-      <DependentUpon>frmEmloyeeSearch.cs</DependentUpon>
+    <EmbeddedResource Include="Userform\frmSearchBox.resx">
+      <DependentUpon>frmSearchBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Userform\frmIEDetail_MaterialAdd.resx">
       <DependentUpon>frmIEDetail_MaterialAdd.cs</DependentUpon>
