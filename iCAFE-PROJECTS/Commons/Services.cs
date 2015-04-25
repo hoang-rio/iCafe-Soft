@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Configuration;
 using System.Data.SqlClient;
-using DevExpress.XtraEditors;
-using DevExpress.XtraRichEdit.API.Word;
 using iCafeLIB.Models.BaseUntils;
 
 namespace iCafe.Commons

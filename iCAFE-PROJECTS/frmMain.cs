@@ -84,7 +84,8 @@ namespace iCafe
             }
             catch (SqlException exception)
             {
-                DialogResult check=XtraMessageBox.Show("Chi tiết: " + exception.Message, "Lỗi kết nối. Hãy thử lại sau",MessageBoxButtons.AbortRetryIgnore,MessageBoxIcon.Error);
+                var check = XtraMessageBox.Show("Chi tiết: " + exception.Message, "Lỗi kết nối. Hãy thử lại sau",
+                    MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
                 if (check != DialogResult.Retry)
                 {
                     Application.Exit();
@@ -95,9 +96,8 @@ namespace iCafe
                     {
                         Process.Start(Application.StartupPath + "\\iCafe.exe");
                     }
-                    Application.Exit();    
+                    Application.Exit();
                 }
-               
             }
         }
 

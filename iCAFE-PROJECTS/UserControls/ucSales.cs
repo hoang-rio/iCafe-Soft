@@ -526,11 +526,8 @@ namespace iCafe.UserControls
                                     ZoneCost + (sl*price) - (sl*price*discount)/100, sl);
                                 break;
                             }
-                            else
-                            {
-                                Add_BillDetail((Guid) objSale.Rows[0]["Bill_ID"],
-                                    ZoneCost + (sl*price) - (sl*price*discount)/100, sl);
-                            }
+                            Add_BillDetail((Guid) objSale.Rows[0]["Bill_ID"],
+                                ZoneCost + (sl*price) - (sl*price*discount)/100, sl);
                         }
                     }
                     gridCDaban.DataSource = objSale;
