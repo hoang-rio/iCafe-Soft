@@ -84,7 +84,7 @@
             this.ucUpdate1.Size = new System.Drawing.Size(340, 41);
             this.ucUpdate1.TabIndex = 0;
             // 
-            // frmEmloyeeSearch
+            // frmSearchBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -95,7 +95,7 @@
             this.Controls.Add(this.lblCa);
             this.Controls.Add(this.lookWS);
             this.Controls.Add(this.ucUpdate1);
-            this.Name = "frmEmloyeeSearch";
+            this.Name = "frmSearchBox";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "iCafe - Project";
             ((System.ComponentModel.ISupportInitialize)(this.lookWS.Properties)).EndInit();
@@ -109,8 +109,8 @@
 
         private BaseControls.ucUpdate ucUpdate1;
         private DevExpress.XtraEditors.LabelControl lblCa;
-        private DevExpress.XtraEditors.LabelControl lblkeyword;
         public DevExpress.XtraEditors.LookUpEdit lookWS;
         public DevExpress.XtraEditors.TextEdit txtkeyWord;
+        private DevExpress.XtraEditors.LabelControl lblkeyword;
     }
 }

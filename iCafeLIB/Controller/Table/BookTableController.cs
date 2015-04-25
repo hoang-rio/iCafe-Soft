@@ -12,6 +12,7 @@ namespace iCafeLIB.Controller.Table
         private const string SP_BOOKTABLE_LOAD = "SP_BOOKTABLE_LOAD";
         private const string SP_BOOKTABLE_BYTABLEID = "SP_BOOKTABLE_BYTABLEID";
         private const string SP_BOOKTABLE_BYTABLENAME = "SP_BOOKTABLE_BYTABLENAME";
+        private const string SP_BOOKTABLE_BYCUSNAME = "SP_BOOKTABLE_BYCUSNAME";
         private const string SP_BOOKTABLE_ADD = "SP_BOOKTABLE_ADD";
         private const string SP_BOOKTABLE_CHECK = "SP_BOOKTABLE_CHECK";
         private const string SP_BOOKTABLE_UPDATE = "SP_BOOKTABLE_UPDATE";
@@ -109,7 +110,27 @@ namespace iCafeLIB.Controller.Table
             }
             return objTable;
         }
-
+        /// <summary>
+        /// Tìm thông tin đặt bàn theo tên khách hàng
+        /// </summary>
+        /// <param name="CusName">Tên khách hàng</param>
+        /// <returns></returns>
+        public DataTable GetByCusName(string CusName)
+        {
+            DataTable objTable;
+            try
+            {
+                SqlParameter[] param=new SqlParameter[1];
+                param[0]=new SqlParameter("@CusName",CusName);
+                objTable = m_objModelsinfo.ExecProcReturnTable(SP_BOOKTABLE_BYCUSNAME, param);
+            }
+            catch (Exception exception)
+            {
+                
+                throw exception;
+            }
+            return objTable;
+        }
         /// <summary>
         ///     Thêm đặt bàn mới
         /// </summary>

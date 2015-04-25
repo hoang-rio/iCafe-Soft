@@ -21,7 +21,6 @@ namespace iCafe.UserControls
         private readonly SecurityContext m_objSecurity;
         private readonly SqlConnection m_objSQLConn;
         private int c;
-        private ImageCollection ic = new ImageCollection();
         private ListView[] listViews;
         private DataTable objZoneTable;
 
@@ -40,6 +39,7 @@ namespace iCafe.UserControls
                 ucBaseController2.PressEdit += Edit_BookTable_Click;
                 ucBaseController2.PressClose += Close_Click;
                 ucBaseController2.PressDelete += Delete_Click;
+                ucBaseController2.PressSearch += Search_Click;
             }
             else
             {
@@ -47,6 +47,24 @@ namespace iCafe.UserControls
             }
         }
 
+        private void Search_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmSearchBox sBox=new frmSearchBox(0,m_objSQLConn,m_objSecurity);
+                sBox.Text = "Tìm theo tên khách hàng";
+                sBox.ShowDialog();
+                string CusName = sBox.txtkeyWord.Text;
+                BookTableController btController=new BookTableController(m_objSQLConn,m_objSecurity);
+                gridControl1.DataSource = btController.GetByCusName(CusName);
+                sBox.Dispose();
+            }
+            catch (Exception exception)
+            {
+
+                XtraMessageBox.Show("Đã có lỗi. Chi tiết: " + exception.Message);
+            }
+        }
         private void Add_BookTable_Click(object sender, EventArgs e)
         {
             try
