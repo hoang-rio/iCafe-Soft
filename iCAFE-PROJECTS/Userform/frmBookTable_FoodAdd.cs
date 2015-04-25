@@ -4,10 +4,7 @@ using System.Data.SqlClient;
 using DevExpress.XtraEditors;
 using iCafeLIB.Controller.Food;
 using iCafeLIB.Controller.ImageInfo;
-using iCafeLIB.Controller.Material;
 using iCafeLIB.Controller.Security;
-using iCafeLIB.Controller.Table;
-using iCafeLIB.Models.DatasetEn;
 
 namespace iCafe.Userform
 {
@@ -176,10 +173,8 @@ namespace iCafe.Userform
             }
             catch (Exception exception)
             {
-
                 XtraMessageBox.Show("Đã có lỗi. Chi tiết: " + exception.Message);
             }
         }
-
     }
 }

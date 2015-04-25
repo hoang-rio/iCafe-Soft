@@ -15,8 +15,8 @@ namespace iCafe.Userform
         private readonly SqlConnection mobjConnection;
         private readonly SecurityContext mobjSecurity;
         private readonly DataRow objRow;
+        private readonly string TableName = "";
         private readonly string ZoneName = "";
-        private string TableName = "";
         private Guid BTableID;
         private DataTable objBTdtTable = new DataTable();
 
@@ -27,7 +27,8 @@ namespace iCafe.Userform
         /// <param name="tName">Tên bàn</param>
         /// <param name="objConnection"></param>
         /// <param name="objSecurityContext"></param>
-        public frmBookTableAdd(string zName,string tName, SqlConnection objConnection, SecurityContext objSecurityContext)
+        public frmBookTableAdd(string zName, string tName, SqlConnection objConnection,
+            SecurityContext objSecurityContext)
         {
             InitializeComponent();
             mobjConnection = objConnection;
@@ -269,6 +270,7 @@ namespace iCafe.Userform
                 GetBookTableDetail();
             }
         }
+
         private void Update_Click(object sender, EventArgs e)
         {
             try
@@ -300,16 +302,16 @@ namespace iCafe.Userform
                 for (var i = 0; i < objBTdtTable.Rows.Count; i++)
                 {
                     dtRow[i] = objDtTable.NewiCafe_BookTableDetailRow();
-                    dtRow[i].BTableID = (Guid)objBTdtTable.Rows[i]["BTableID"];
-                    dtRow[i].FoodID = (Guid)objBTdtTable.Rows[i]["FoodID"];
-                    dtRow[i].Quantity = (Decimal)objBTdtTable.Rows[i]["Quantity"];
-                    dtRow[i].TotalPrice = (Decimal)objBTdtTable.Rows[i]["TotalPrice"];
+                    dtRow[i].BTableID = (Guid) objBTdtTable.Rows[i]["BTableID"];
+                    dtRow[i].FoodID = (Guid) objBTdtTable.Rows[i]["FoodID"];
+                    dtRow[i].Quantity = (Decimal) objBTdtTable.Rows[i]["Quantity"];
+                    dtRow[i].TotalPrice = (Decimal) objBTdtTable.Rows[i]["TotalPrice"];
 
                     objDtTable.Rows.Add(dtRow[i]);
                 }
 
                 var btController = new BookTableController(mobjConnection, mobjSecurity);
-                btController.Update(objBtTable,objDtTable);
+                btController.Update(objBtTable, objDtTable);
                 XtraMessageBox.Show("Cập nhật thành công");
             }
             catch (NullReferenceException)

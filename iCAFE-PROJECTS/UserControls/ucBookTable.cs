@@ -3,7 +3,6 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
-using DevExpress.Utils;
 using DevExpress.XtraEditors;
 using DevExpress.XtraSplashScreen;
 using DevExpress.XtraTab;
@@ -51,33 +50,36 @@ namespace iCafe.UserControls
         {
             try
             {
-                frmSearchBox sBox=new frmSearchBox(0,m_objSQLConn,m_objSecurity);
+                var sBox = new frmSearchBox(0, m_objSQLConn, m_objSecurity);
                 sBox.Text = "Tìm theo tên khách hàng";
                 sBox.ShowDialog();
-                string CusName = sBox.txtkeyWord.Text;
-                BookTableController btController=new BookTableController(m_objSQLConn,m_objSecurity);
+                var CusName = sBox.txtkeyWord.Text;
+                var btController = new BookTableController(m_objSQLConn, m_objSecurity);
                 gridControl1.DataSource = btController.GetByCusName(CusName);
                 sBox.Dispose();
             }
             catch (Exception exception)
             {
-
                 XtraMessageBox.Show("Đã có lỗi. Chi tiết: " + exception.Message);
             }
         }
+
         private void Add_BookTable_Click(object sender, EventArgs e)
         {
             try
             {
-                SplashScreenManager.ShowForm(typeof(frmwait));
+                SplashScreenManager.ShowForm(typeof (frmwait));
                 var selectedTabIndex = tabTable1.SelectedTabPageIndex;
                 var itemIndex = 0;
                 try
                 {
                     itemIndex = listViews[selectedTabIndex].SelectedIndices[0];
                 }
-                catch (Exception){}
-                var bookTableAdd = new frmBookTableAdd(tabTable1.SelectedTabPage.Text, listViews[selectedTabIndex].Items[itemIndex].Text, m_objSQLConn, m_objSecurity);
+                catch (Exception)
+                {
+                }
+                var bookTableAdd = new frmBookTableAdd(tabTable1.SelectedTabPage.Text,
+                    listViews[selectedTabIndex].Items[itemIndex].Text, m_objSQLConn, m_objSecurity);
                 bookTableAdd.ShowDialog();
                 LoadTable();
                 tabTable1.SelectedTabPageIndex = selectedTabIndex;
@@ -85,10 +87,8 @@ namespace iCafe.UserControls
             }
             catch (Exception exception)
             {
-
                 XtraMessageBox.Show("Đã có lỗi. Chi tiết: " + exception.Message);
             }
-           
         }
 
         private void LoadTable()
@@ -259,7 +259,7 @@ namespace iCafe.UserControls
         {
             try
             {
-                SplashScreenManager.ShowForm(typeof(frmwait));
+                SplashScreenManager.ShowForm(typeof (frmwait));
                 if (gridBookTable.RowCount > 0)
                 {
                     var BTEdit = new frmBookTableAdd(gridBookTable.GetFocusedDataRow(), m_objSQLConn, m_objSecurity);

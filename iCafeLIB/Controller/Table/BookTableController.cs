@@ -110,8 +110,9 @@ namespace iCafeLIB.Controller.Table
             }
             return objTable;
         }
+
         /// <summary>
-        /// Tìm thông tin đặt bàn theo tên khách hàng
+        ///     Tìm thông tin đặt bàn theo tên khách hàng
         /// </summary>
         /// <param name="CusName">Tên khách hàng</param>
         /// <returns></returns>
@@ -120,17 +121,17 @@ namespace iCafeLIB.Controller.Table
             DataTable objTable;
             try
             {
-                SqlParameter[] param=new SqlParameter[1];
-                param[0]=new SqlParameter("@CusName",CusName);
+                var param = new SqlParameter[1];
+                param[0] = new SqlParameter("@CusName", CusName);
                 objTable = m_objModelsinfo.ExecProcReturnTable(SP_BOOKTABLE_BYCUSNAME, param);
             }
             catch (Exception exception)
             {
-                
                 throw exception;
             }
             return objTable;
         }
+
         /// <summary>
         ///     Thêm đặt bàn mới
         /// </summary>
@@ -173,7 +174,7 @@ namespace iCafeLIB.Controller.Table
         ///     Update bookTable
         /// </summary>
         /// <param name="objTable"></param>
-        public void Update(iCafeDataEn.iCafe_BookTableDataTable objTable, 
+        public void Update(iCafeDataEn.iCafe_BookTableDataTable objTable,
             iCafeDataEn.iCafe_BookTableDetailDataTable objBTdtTable)
         {
             try
@@ -245,6 +246,7 @@ namespace iCafeLIB.Controller.Table
                 throw exception;
             }
         }
+
         /// <summary>
         ///     Xóa đặt bàn
         /// </summary>
