@@ -48,11 +48,11 @@ namespace iCafe.UserControls
 
         private void Add_BookTable_Click(object sender, EventArgs e)
         {
-            var SelectedTab = tabTable1.SelectedTabPageIndex;
-            var bookTableAdd = new frmBookTableAdd(tabTable1.SelectedTabPage.Text, m_objSQLConn, m_objSecurity);
+            var SelectedTabIndex = tabTable1.SelectedTabPageIndex;
+            var bookTableAdd = new frmBookTableAdd(tabTable1.SelectedTabPage.Text,listViews[SelectedTabIndex].Items[listViews[SelectedTabIndex].SelectedIndices[0]].Text, m_objSQLConn, m_objSecurity);
             bookTableAdd.ShowDialog();
             LoadTable();
-            tabTable1.SelectedTabPageIndex = SelectedTab;
+            tabTable1.SelectedTabPageIndex = SelectedTabIndex;
         }
 
         private void LoadTable()
@@ -118,13 +118,13 @@ namespace iCafe.UserControls
             GetBookTableByTableName(e.Item.Text);
         }
 
-        private void GetBookTableByTableName(string TableName)
+        private void GetBookTableByTableName(string tableName)
         {
             try
             {
                 DataTable objBookTable;
                 var btController = new BookTableController(m_objSQLConn, m_objSecurity);
-                objBookTable = btController.GetByTableName(TableName);
+                objBookTable = btController.GetByTableName(tableName);
                 gridControl1.DataSource = objBookTable;
             }
             catch (Exception exception)

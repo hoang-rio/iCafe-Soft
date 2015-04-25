@@ -16,16 +16,18 @@ namespace iCafe.Userform
         private readonly SecurityContext mobjSecurity;
         private readonly DataRow objRow;
         private readonly string ZoneName = "";
+        private string TableName = "";
         private Guid BTableID;
         private DataTable objBTdtTable = new DataTable();
 
         /// <summary>
         ///     Hàm tạo thêm mới
         /// </summary>
-        /// <param name="ZoneName">Tên khu vực</param>
+        /// <param name="zName">Tên khu vực</param>
+        /// <param name="tName">Tên bàn</param>
         /// <param name="objConnection"></param>
         /// <param name="objSecurityContext"></param>
-        public frmBookTableAdd(string zName, SqlConnection objConnection, SecurityContext objSecurityContext)
+        public frmBookTableAdd(string zName,string tName, SqlConnection objConnection, SecurityContext objSecurityContext)
         {
             InitializeComponent();
             mobjConnection = objConnection;
@@ -35,6 +37,7 @@ namespace iCafe.Userform
             ZoneLoad();
             Add_Column();
             ZoneName = zName;
+            TableName = tName;
             gridControl1.DataSource = objBTdtTable;
             ucUpdate1.btnFCapNhat.ItemClick += Add_Click;
             ucSimpleControl1.btnThemmoi.ItemClick += AddFood;
@@ -194,7 +197,8 @@ namespace iCafe.Userform
         /// <param name="e"></param>
         private void Delete_Food(object sender, EventArgs e)
         {
-            gridView1.DeleteSelectedRows();
+            //gridView1.DeleteSelectedRows();
+            objBTdtTable.Rows.RemoveAt(gridView1.GetFocusedDataSourceRowIndex());
         }
 
         private void lookZone_EditValueChanged(object sender, EventArgs e)
@@ -253,6 +257,11 @@ namespace iCafe.Userform
             if (ZoneName != "")
             {
                 lookZone.Text = ZoneName;
+                TableByZone();
+            }
+            if (TableName != "")
+            {
+                lookTable.Text = TableName;
             }
             if (objRow != null)
             {
@@ -285,7 +294,6 @@ namespace iCafe.Userform
                 row.Status = (byte) cbStatus.SelectedIndex;
                 objBtTable.Rows.Add(row);
                 //-------------------------------------------------------//                
-
                 SetValue();
                 var objDtTable = new iCafeDataEn.iCafe_BookTableDetailDataTable();
                 var dtRow = new iCafeDataEn.iCafe_BookTableDetailRow[objBTdtTable.Rows.Count];

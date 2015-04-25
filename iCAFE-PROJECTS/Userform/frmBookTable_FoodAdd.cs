@@ -166,13 +166,9 @@ namespace iCafe.Userform
 
         private void lookFood_EditValueChanged(object sender, EventArgs e)
         {
-            Text = "iCafe - Project";
-        }
-
-        private void lookFood_EditValueChanged_1(object sender, EventArgs e)
-        {
             try
             {
+                Text = "iCafe - Project";
                 picFood.Image =
                     ImageController.ConvertByteToImage(
                         (byte[])
@@ -180,8 +176,10 @@ namespace iCafe.Userform
             }
             catch (Exception exception)
             {
+
                 XtraMessageBox.Show("Đã có lỗi. Chi tiết: " + exception.Message);
             }
         }
+
     }
 }

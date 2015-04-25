@@ -64,7 +64,7 @@ namespace iCafe.Userform
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 116);
+            this.label1.Location = new System.Drawing.Point(7, 119);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 1;
@@ -99,7 +99,7 @@ namespace iCafe.Userform
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 151);
+            this.label2.Location = new System.Drawing.Point(7, 151);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 4;
@@ -119,7 +119,7 @@ namespace iCafe.Userform
             this.lookFood.Properties.View = this.searchLookUpEdit1View;
             this.lookFood.Size = new System.Drawing.Size(222, 20);
             this.lookFood.TabIndex = 5;
-            this.lookFood.EditValueChanged += new System.EventHandler(this.lookFood_EditValueChanged_1);
+            this.lookFood.EditValueChanged += new System.EventHandler(this.lookFood_EditValueChanged);
             // 
             // searchLookUpEdit1View
             // 
