@@ -54,8 +54,13 @@ namespace iCafe.UserControls
                 sBox.Text = "Tìm theo tên khách hàng";
                 sBox.ShowDialog();
                 var CusName = sBox.txtkeyWord.Text;
-                var btController = new BookTableController(m_objSQLConn, m_objSecurity);
-                gridControl1.DataSource = btController.GetByCusName(CusName);
+                if (CusName != "")
+                {
+                    SplashScreenManager.ShowForm(typeof(frmwait));
+                    var btController = new BookTableController(m_objSQLConn, m_objSecurity);
+                    gridControl1.DataSource = btController.GetByCusName(CusName);
+                    SplashScreenManager.CloseForm();
+                }               
                 sBox.Dispose();
             }
             catch (Exception exception)
