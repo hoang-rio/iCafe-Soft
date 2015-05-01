@@ -128,8 +128,8 @@ namespace iCafe.UserControls
                     {
                         items[j] = new ListViewItem();
                         items[j].Text = objTable.Rows[j]["TableName"].ToString();
-                        items[j].Name = objTable.Rows[j]["TableName"].ToString();
-                        if (btController.GetByTableName(objTable.Rows[j]["TableName"].ToString()).Rows.Count != 0)
+                        items[j].Name = objTable.Rows[j]["TableID"].ToString();
+                        if (btController.GetByTableID(objTable.Rows[j]["TableID"].ToString()).Rows.Count != 0)
                         {
                             items[j].ImageIndex = 0;
                         }
@@ -156,16 +156,16 @@ namespace iCafe.UserControls
 
         private void ListViewSelectionChange(object sender, ListViewItemSelectionChangedEventArgs e)
         {
-            GetBookTableByTableName(e.Item.Text);
+            GetBookTableByTableID(e.Item.Name);
         }
 
-        private void GetBookTableByTableName(string tableName)
+        private void GetBookTableByTableID(string tableID)
         {
             try
             {
                 DataTable objBookTable;
                 var btController = new BookTableController(m_objSQLConn, m_objSecurity);
-                objBookTable = btController.GetByTableName(tableName);
+                objBookTable = btController.GetByTableID(tableID);
                 gridControl1.DataSource = objBookTable;
             }
             catch (Exception exception)
@@ -184,8 +184,8 @@ namespace iCafe.UserControls
             try
             {
                 var i = tabTable1.SelectedTabPageIndex;
-                var TableName = listViews[i].Items[0].Text;
-                GetBookTableByTableName(TableName);
+                var tableid = listViews[i].Items[0].Name;
+                GetBookTableByTableID(tableid);
             }
             catch (Exception exception)
             {
