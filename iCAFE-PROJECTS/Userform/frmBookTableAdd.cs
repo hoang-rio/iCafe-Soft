@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraTab;
 using iCafeLIB.Controller.Customer;
 using iCafeLIB.Controller.Security;
 using iCafeLIB.Controller.Table;
@@ -17,6 +19,7 @@ namespace iCafe.Userform
         private readonly DataRow objRow;
         private readonly string TableName = "";
         private readonly string ZoneName = "";
+        private ListView listView;
         private Guid BTableID;
         private DataTable objBTdtTable = new DataTable();
 
@@ -27,7 +30,7 @@ namespace iCafe.Userform
         /// <param name="tName">Tên bàn</param>
         /// <param name="objConnection"></param>
         /// <param name="objSecurityContext"></param>
-        public frmBookTableAdd(string zName, string tName, SqlConnection objConnection,
+        public frmBookTableAdd(string zName, string tName,ListView sListView, SqlConnection objConnection,
             SecurityContext objSecurityContext)
         {
             InitializeComponent();
@@ -39,12 +42,14 @@ namespace iCafe.Userform
             Add_Column();
             ZoneName = zName;
             TableName = tName;
+            listView = sListView;
             gridControl1.DataSource = objBTdtTable;
             ucUpdate1.btnFCapNhat.ItemClick += Add_Click;
             ucSimpleControl1.btnThemmoi.ItemClick += AddFood;
             ucSimpleControl1.btnFXoa.ItemClick += Delete_Food;
             ucUpdate1.btnFDong.ItemClick += Close_Click;
             ucSimpleControl1.btnEdit.ItemClick += Edit_Food_Click;
+            ucUpdate1.btnFCapNhat.ItemClick += creatNewBTableID;
         }
 
         /// <summary>
@@ -70,6 +75,11 @@ namespace iCafe.Userform
             gridView1.ValidateRow += Quantity_Validate;
         }
 
+        private void creatNewBTableID(object sender,EventArgs e)
+        {
+            BTableID=new Guid();
+            this.Text = "Đã tạo mã đặt bàn mới";
+        }
         private void Add_Column()
         {
             objBTdtTable.Columns.Add("BTableID", Type.GetType("System.Guid"));
@@ -144,7 +154,7 @@ namespace iCafe.Userform
                 var cusCtrl = new CustomerController(mobjConnection, mobjSecurity);
                 lookCus.Properties.DataSource = cusCtrl.GetALL();
                 lookCus.Properties.DisplayMember = "CusName";
-                lookCus.Properties.ValueMember = "CusName";
+                lookCus.Properties.ValueMember = "CusID";
             }
             catch (Exception exception)
             {
@@ -159,6 +169,7 @@ namespace iCafe.Userform
                 var zCtrl = new ZoneController(mobjConnection, mobjSecurity);
                 lookZone.Properties.DataSource = zCtrl.GetAll();
                 lookZone.Properties.DisplayMember = "ZoneName";
+                lookZone.Properties.ValueMember = "ZoneID";
             }
             catch (Exception exception)
             {
@@ -173,6 +184,7 @@ namespace iCafe.Userform
                 var tCtrl = new TableController(mobjConnection, mobjSecurity);
                 lookTable.Properties.DataSource = tCtrl.GetByZoneName(lookZone.Text);
                 lookTable.Properties.DisplayMember = "TableName";
+                lookTable.Properties.ValueMember = "TableID";
             }
             catch (Exception exception)
             {
@@ -211,22 +223,18 @@ namespace iCafe.Userform
         {
             try
             {
+                this.Text = "iCafe - Project";
                 var objBtTable = new iCafeDataEn.iCafe_BookTableDataTable();
                 var row = objBtTable.NewiCafe_BookTableRow();
                 row.BTableID = BTableID;
                 row.BookTime = dateBookTime.DateTime;
                 row.EndTime = dateEndTime.DateTime;
-                row.CusID =
-                    (Guid)
-                        lookCus.Properties.View.GetRowCellValue(lookCus.Properties.View.FocusedRowHandle, "CusID");
+                row.CusID = (Guid)lookCus.EditValue;                    
                 row.Descript = txtDescript.Text;
                 row.Deposit = int.Parse(txtDeposit.Text);
                 row.NumPeople = spinNumPeople.Value;
-                row.ZoneID =
-                    (Guid) ((DataRowView) lookZone.Properties.GetDataSourceRowByKeyValue(lookZone.EditValue))["ZoneID"];
-                row.TableID =
-                    (Guid)
-                        ((DataRowView) lookTable.Properties.GetDataSourceRowByKeyValue(lookTable.EditValue))["TableID"];
+                row.ZoneID =(Guid) lookZone.EditValue;
+                row.TableID = (Guid) lookTable.EditValue;
                 row.Status = (byte) cbStatus.SelectedIndex;
                 objBtTable.Rows.Add(row);
                 //-------------------------------------------------------//
@@ -245,6 +253,10 @@ namespace iCafe.Userform
 
                 var btController = new BookTableController(mobjConnection, mobjSecurity);
                 btController.AddNew(objBtTable, objDtTable);
+                if (listView.Items[lookTable.EditValue.ToString()].ImageIndex != 0)
+                {
+                    listView.Items[lookTable.EditValue.ToString()].ImageIndex = 0;
+                }
                 XtraMessageBox.Show("Thêm thành công");
             }
             catch (Exception exception)

@@ -84,9 +84,9 @@ namespace iCafe.UserControls
                 {
                 }
                 var bookTableAdd = new frmBookTableAdd(tabTable1.SelectedTabPage.Text,
-                    listViews[selectedTabIndex].Items[itemIndex].Text, m_objSQLConn, m_objSecurity);
+                    listViews[selectedTabIndex].Items[itemIndex].Text,listViews[tabTable1.SelectedTabPageIndex], m_objSQLConn, m_objSecurity);
                 bookTableAdd.ShowDialog();
-                LoadTable();
+                GetBookTableByTableID(listViews[selectedTabIndex].Items[itemIndex].Name);
                 tabTable1.SelectedTabPageIndex = selectedTabIndex;
                 SplashScreenManager.CloseForm();
             }
@@ -138,6 +138,7 @@ namespace iCafe.UserControls
                             items[j].ImageIndex = i + 1;
                         }
                     }
+                    listViews[i].MultiSelect = false;
                     listViews[i].Items.AddRange(items);
                     listViews[i].Dock = DockStyle.Fill;
                     tabTable1.TabPages[i].Controls.Add(listViews[i]);
@@ -185,6 +186,8 @@ namespace iCafe.UserControls
             {
                 var i = tabTable1.SelectedTabPageIndex;
                 var tableid = listViews[i].Items[0].Name;
+                listViews[i].Items[0].Selected = true;
+                listViews[i].Select();
                 GetBookTableByTableID(tableid);
             }
             catch (Exception exception)
@@ -208,16 +211,16 @@ namespace iCafe.UserControls
                 {
                     var btController = new BookTableController(m_objSQLConn, m_objSecurity);
                     btController.Delete(
-                        gridBookTable.GetRowCellValue(gridBookTable.FocusedRowHandle, "BTableID").ToString());
-                    XtraMessageBox.Show("Xóa thành công");
+                        gridBookTable.GetRowCellValue(gridBookTable.FocusedRowHandle, "BTableID").ToString());                    
                     if (gridBookTable.RowCount == 1)
                     {
                         listViews[tabTable1.SelectedTabPageIndex].Items[
-                            gridBookTable.GetRowCellValue(gridBookTable.FocusedRowHandle, "TableName").ToString()]
+                            gridBookTable.GetRowCellValue(gridBookTable.FocusedRowHandle, "TableID").ToString()]
                             .ImageIndex = tabTable1.SelectedTabPageIndex + 1;
                     }
                     gridBookTable.DeleteSelectedRows();
-                    tabTable1_Click(sender, null);
+                    XtraMessageBox.Show("Xóa thành công");
+                    //tabTable1_Click(sender, null);
                 }
             }
             catch (Exception exception)
