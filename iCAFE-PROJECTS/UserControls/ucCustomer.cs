@@ -117,8 +117,8 @@ namespace iCafe.UserControls
                     var objCustomerController = new CustomerController(m_objConnection, m_objSecurity);
                     var CusID = gridView1.GetFocusedRowCellValue("CusID").ToString();
                     objCustomerController.Delete(CusID);
-                    XtraMessageBox.Show("Xóa thành công");
                     gridView1.DeleteSelectedRows();
+                    XtraMessageBox.Show("Xóa thành công");                    
                 }
             }
             catch (Exception exception)

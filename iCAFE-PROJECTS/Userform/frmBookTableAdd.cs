@@ -48,7 +48,7 @@ namespace iCafe.Userform
             ucSimpleControl1.btnFXoa.ItemClick += Delete_Food;
             ucUpdate1.btnFDong.ItemClick += Close_Click;
             ucSimpleControl1.btnEdit.ItemClick += Edit_Food_Click;
-            ucUpdate1.btnFCapNhat.ItemClick += creatNewBTableID;
+            ucUpdate1.btnFNapLai.ItemClick += creatNewBTableID;
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace iCafe.Userform
 
         private void creatNewBTableID(object sender,EventArgs e)
         {
-            BTableID=new Guid();
+            BTableID=Guid.NewGuid();
             this.Text = "Đã tạo mã đặt bàn mới";
         }
         private void Add_Column()
@@ -99,7 +99,7 @@ namespace iCafe.Userform
                 dateBookTime.DateTime = (DateTime) objRow["BookTime"];
                 dateEndTime.DateTime = (DateTime) objRow["EndTime"];
                 lookZone.Text = objRow["ZoneName"].ToString();
-                lookCus.EditValue = objRow["CusName"].ToString();
+                lookCus.EditValue = objRow["CusID"];
                 lookTable.Text = objRow["TableName"].ToString();
                 txtDeposit.Text = objRow["Deposit"].ToString();
                 spinNumPeople.Value = (Decimal) objRow["Numpeople"];
@@ -135,6 +135,7 @@ namespace iCafe.Userform
                 objRow["EndTime"] = dateEndTime.DateTime;
                 objRow["ZoneName"] = lookZone.Text;
                 objRow["CusName"] = lookCus.Text;
+                objRow["CusID"] = lookCus.EditValue;
                 objRow["Numpeople"] = spinNumPeople.Value;
                 objRow["TableName"] = lookTable.Text;
                 objRow["Deposit"] = txtDeposit.Text;
@@ -228,11 +229,11 @@ namespace iCafe.Userform
                 row.BTableID = BTableID;
                 row.BookTime = dateBookTime.DateTime;
                 row.EndTime = dateEndTime.DateTime;
-                row.CusID = (Guid)lookCus.EditValue;                    
+                row.CusID = (Guid) lookCus.EditValue;
                 row.Descript = txtDescript.Text;
                 row.Deposit = int.Parse(txtDeposit.Text);
                 row.NumPeople = spinNumPeople.Value;
-                row.ZoneID =(Guid) lookZone.EditValue;
+                row.ZoneID = (Guid) lookZone.EditValue;
                 row.TableID = (Guid) lookTable.EditValue;
                 row.Status = (byte) cbStatus.SelectedIndex;
                 objBtTable.Rows.Add(row);
@@ -291,19 +292,12 @@ namespace iCafe.Userform
                 row.BTableID = BTableID;
                 row.BookTime = dateBookTime.DateTime;
                 row.EndTime = dateEndTime.DateTime;
-                row.CusID =
-                    (Guid)
-                        lookCus.Properties.View.GetRowCellValue(lookCus.Properties.View.FocusedRowHandle, "CusID");
+                row.CusID = (Guid) lookCus.EditValue;
                 row.Descript = txtDescript.Text;
                 row.Deposit = int.Parse(txtDeposit.Text);
                 row.NumPeople = spinNumPeople.Value;
-                row.ZoneID =
-                    (Guid)
-                        ((DataRowView) lookZone.Properties.GetDataSourceRowByKeyValue(lookZone.EditValue))["ZoneID"];
-                row.TableID =
-                    (Guid)
-                        ((DataRowView) lookTable.Properties.GetDataSourceRowByKeyValue(lookTable.EditValue))[
-                            "TableID"];
+                row.ZoneID = (Guid)lookZone.EditValue;
+                row.TableID = (Guid)lookTable.EditValue;
                 row.Status = (byte) cbStatus.SelectedIndex;
                 objBtTable.Rows.Add(row);
                 //-------------------------------------------------------//                
@@ -325,7 +319,7 @@ namespace iCafe.Userform
                 btController.Update(objBtTable, objDtTable);
                 XtraMessageBox.Show("Cập nhật thành công");
             }
-            catch (NullReferenceException)
+            catch (InvalidCastException)
             {
                 XtraMessageBox.Show("Đã có lỗi. Hãy thử chọn lại khách hàng");
             }

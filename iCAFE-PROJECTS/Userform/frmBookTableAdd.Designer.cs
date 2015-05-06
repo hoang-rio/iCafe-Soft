@@ -36,11 +36,11 @@ namespace iCafe.Userform
         private void InitializeComponent()
         {
             this.groupKH = new DevExpress.XtraEditors.GroupControl();
-            this.lookTable = new DevExpress.XtraEditors.LookUpEdit();
-            this.lookZone = new DevExpress.XtraEditors.LookUpEdit();
             this.lookCus = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.CusName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnaddCus = new DevExpress.XtraEditors.SimpleButton();
+            this.lookTable = new DevExpress.XtraEditors.LookUpEdit();
+            this.lookZone = new DevExpress.XtraEditors.LookUpEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -65,13 +65,14 @@ namespace iCafe.Userform
             this.spinNumPeople = new DevExpress.XtraEditors.SpinEdit();
             this.txtDeposit = new DevExpress.XtraEditors.TextEdit();
             this.ucUpdate1 = new iCafe.BaseControls.ucUpdate();
-            this.btnaddCus = new DevExpress.XtraEditors.SimpleButton();
+            this.CusName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CusPhone = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupKH)).BeginInit();
             this.groupKH.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lookTable.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookZone.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookCus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookTable.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookZone.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -93,10 +94,10 @@ namespace iCafe.Userform
             this.groupKH.AppearanceCaption.Options.UseFont = true;
             this.groupKH.AppearanceCaption.Options.UseForeColor = true;
             this.groupKH.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupKH.Controls.Add(this.lookCus);
             this.groupKH.Controls.Add(this.btnaddCus);
             this.groupKH.Controls.Add(this.lookTable);
             this.groupKH.Controls.Add(this.lookZone);
-            this.groupKH.Controls.Add(this.lookCus);
             this.groupKH.Controls.Add(this.groupControl1);
             this.groupKH.Controls.Add(this.cbStatus);
             this.groupKH.Controls.Add(this.dateEndTime);
@@ -119,6 +120,37 @@ namespace iCafe.Userform
             this.groupKH.Size = new System.Drawing.Size(672, 449);
             this.groupKH.TabIndex = 5;
             this.groupKH.Text = "Cập nhật thông tin đặt bàn";
+            // 
+            // lookCus
+            // 
+            this.lookCus.EditValue = "";
+            this.lookCus.Location = new System.Drawing.Point(111, 235);
+            this.lookCus.Name = "lookCus";
+            this.lookCus.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookCus.Properties.NullText = "Chọn khách hàng";
+            this.lookCus.Properties.View = this.searchLookUpEdit1View;
+            this.lookCus.Size = new System.Drawing.Size(177, 20);
+            this.lookCus.TabIndex = 21;
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.CusName,
+            this.CusPhone});
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // btnaddCus
+            // 
+            this.btnaddCus.Image = global::iCafe.Properties.Resources._new;
+            this.btnaddCus.Location = new System.Drawing.Point(290, 233);
+            this.btnaddCus.Name = "btnaddCus";
+            this.btnaddCus.Size = new System.Drawing.Size(23, 23);
+            this.btnaddCus.TabIndex = 20;
+            this.btnaddCus.Click += new System.EventHandler(this.btnaddCus_Click);
             // 
             // lookTable
             // 
@@ -144,34 +176,6 @@ namespace iCafe.Userform
             this.lookZone.Size = new System.Drawing.Size(177, 20);
             this.lookZone.TabIndex = 19;
             this.lookZone.EditValueChanged += new System.EventHandler(this.lookZone_EditValueChanged);
-            // 
-            // lookCus
-            // 
-            this.lookCus.Location = new System.Drawing.Point(111, 235);
-            this.lookCus.Name = "lookCus";
-            this.lookCus.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookCus.Properties.NullText = "Chọn khách hàng";
-            this.lookCus.Properties.View = this.searchLookUpEdit1View;
-            this.lookCus.Size = new System.Drawing.Size(177, 20);
-            this.lookCus.TabIndex = 18;
-            // 
-            // searchLookUpEdit1View
-            // 
-            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.CusName});
-            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
-            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // CusName
-            // 
-            this.CusName.Caption = "Tên khách hàng";
-            this.CusName.FieldName = "CusName";
-            this.CusName.Name = "CusName";
-            this.CusName.Visible = true;
-            this.CusName.VisibleIndex = 0;
             // 
             // groupControl1
             // 
@@ -439,14 +443,21 @@ namespace iCafe.Userform
             this.ucUpdate1.Size = new System.Drawing.Size(672, 50);
             this.ucUpdate1.TabIndex = 4;
             // 
-            // btnaddCus
+            // CusName
             // 
-            this.btnaddCus.Image = global::iCafe.Properties.Resources._new;
-            this.btnaddCus.Location = new System.Drawing.Point(290, 233);
-            this.btnaddCus.Name = "btnaddCus";
-            this.btnaddCus.Size = new System.Drawing.Size(23, 23);
-            this.btnaddCus.TabIndex = 20;
-            this.btnaddCus.Click += new System.EventHandler(this.btnaddCus_Click);
+            this.CusName.Caption = "Tên khách hàng";
+            this.CusName.FieldName = "CusName";
+            this.CusName.Name = "CusName";
+            this.CusName.Visible = true;
+            this.CusName.VisibleIndex = 0;
+            // 
+            // CusPhone
+            // 
+            this.CusPhone.Caption = "Số điện thoại";
+            this.CusPhone.FieldName = "CusPhone";
+            this.CusPhone.Name = "CusPhone";
+            this.CusPhone.Visible = true;
+            this.CusPhone.VisibleIndex = 1;
             // 
             // frmBookTableAdd
             // 
@@ -464,10 +475,10 @@ namespace iCafe.Userform
             ((System.ComponentModel.ISupportInitialize)(this.groupKH)).EndInit();
             this.groupKH.ResumeLayout(false);
             this.groupKH.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lookTable.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookZone.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookCus.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookTable.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookZone.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -509,13 +520,14 @@ namespace iCafe.Userform
         private GridColumn Quantity;
         private GridColumn FUnit;
         private GridColumn TotalPrice;
-        private SearchLookUpEdit lookCus;
-        private GridView searchLookUpEdit1View;
-        private GridColumn CusName;
         private LookUpEdit lookTable;
         private LookUpEdit lookZone;
         private LabelControl labelControl3;
         private LabelControl labelControl2;
         private SimpleButton btnaddCus;
+        private SearchLookUpEdit lookCus;
+        private GridView searchLookUpEdit1View;
+        private GridColumn CusName;
+        private GridColumn CusPhone;
     }
 }
