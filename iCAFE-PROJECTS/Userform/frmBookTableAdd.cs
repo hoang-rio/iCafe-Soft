@@ -3,7 +3,6 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using DevExpress.XtraTab;
 using iCafeLIB.Controller.Customer;
 using iCafeLIB.Controller.Security;
 using iCafeLIB.Controller.Table;

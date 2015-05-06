@@ -179,7 +179,6 @@ namespace iCafe.UserControls
         {
             //LoadData();
         }
-
         private void tabTable1_Click(object sender, EventArgs e)
         {
             try
