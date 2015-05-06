@@ -65,6 +65,7 @@ namespace iCafe.Userform
             this.spinNumPeople = new DevExpress.XtraEditors.SpinEdit();
             this.txtDeposit = new DevExpress.XtraEditors.TextEdit();
             this.ucUpdate1 = new iCafe.BaseControls.ucUpdate();
+            this.btnaddCus = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupKH)).BeginInit();
             this.groupKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookTable.Properties)).BeginInit();
@@ -92,6 +93,7 @@ namespace iCafe.Userform
             this.groupKH.AppearanceCaption.Options.UseFont = true;
             this.groupKH.AppearanceCaption.Options.UseForeColor = true;
             this.groupKH.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupKH.Controls.Add(this.btnaddCus);
             this.groupKH.Controls.Add(this.lookTable);
             this.groupKH.Controls.Add(this.lookZone);
             this.groupKH.Controls.Add(this.lookCus);
@@ -114,7 +116,7 @@ namespace iCafe.Userform
             this.groupKH.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupKH.Location = new System.Drawing.Point(0, 50);
             this.groupKH.Name = "groupKH";
-            this.groupKH.Size = new System.Drawing.Size(626, 449);
+            this.groupKH.Size = new System.Drawing.Size(672, 449);
             this.groupKH.TabIndex = 5;
             this.groupKH.Text = "Cập nhật thông tin đặt bàn";
             // 
@@ -180,9 +182,9 @@ namespace iCafe.Userform
             this.groupControl1.Controls.Add(this.gridControl1);
             this.groupControl1.Controls.Add(this.ucSimpleControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupControl1.Location = new System.Drawing.Point(289, 28);
+            this.groupControl1.Location = new System.Drawing.Point(319, 28);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(335, 419);
+            this.groupControl1.Size = new System.Drawing.Size(351, 419);
             this.groupControl1.TabIndex = 17;
             this.groupControl1.Text = "Đặt món";
             // 
@@ -192,7 +194,7 @@ namespace iCafe.Userform
             this.gridControl1.Location = new System.Drawing.Point(2, 63);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(331, 354);
+            this.gridControl1.Size = new System.Drawing.Size(347, 354);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -249,7 +251,7 @@ namespace iCafe.Userform
             this.ucSimpleControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ucSimpleControl1.Location = new System.Drawing.Point(2, 21);
             this.ucSimpleControl1.Name = "ucSimpleControl1";
-            this.ucSimpleControl1.Size = new System.Drawing.Size(331, 42);
+            this.ucSimpleControl1.Size = new System.Drawing.Size(347, 42);
             this.ucSimpleControl1.TabIndex = 0;
             // 
             // cbStatus
@@ -434,14 +436,23 @@ namespace iCafe.Userform
             this.ucUpdate1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ucUpdate1.Location = new System.Drawing.Point(0, 0);
             this.ucUpdate1.Name = "ucUpdate1";
-            this.ucUpdate1.Size = new System.Drawing.Size(626, 50);
+            this.ucUpdate1.Size = new System.Drawing.Size(672, 50);
             this.ucUpdate1.TabIndex = 4;
+            // 
+            // btnaddCus
+            // 
+            this.btnaddCus.Image = global::iCafe.Properties.Resources._new;
+            this.btnaddCus.Location = new System.Drawing.Point(290, 233);
+            this.btnaddCus.Name = "btnaddCus";
+            this.btnaddCus.Size = new System.Drawing.Size(23, 23);
+            this.btnaddCus.TabIndex = 20;
+            this.btnaddCus.Click += new System.EventHandler(this.btnaddCus_Click);
             // 
             // frmBookTableAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 499);
+            this.ClientSize = new System.Drawing.Size(672, 499);
             this.ControlBox = false;
             this.Controls.Add(this.groupKH);
             this.Controls.Add(this.ucUpdate1);
@@ -505,5 +516,6 @@ namespace iCafe.Userform
         private LookUpEdit lookZone;
         private LabelControl labelControl3;
         private LabelControl labelControl2;
+        private SimpleButton btnaddCus;
     }
 }

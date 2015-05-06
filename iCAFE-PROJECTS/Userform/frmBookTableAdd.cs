@@ -359,5 +359,12 @@ namespace iCafe.Userform
                 XtraMessageBox.Show("Đã có lỗi. Chi tiết: " + exception.Message);
             }
         }
+
+        private void btnaddCus_Click(object sender, EventArgs e)
+        {
+            var newCus =new frmCustomerAdd(new DataTable("Cus"),mobjConnection, mobjSecurity);
+            newCus.ShowDialog();
+            CusLoad();
+        }
     }
 }
