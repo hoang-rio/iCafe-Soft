@@ -26,8 +26,7 @@ namespace iCafe.UserControls
         public ucBookTable(SqlConnection objConnect, SecurityContext objSecurity)
         {
             m_objSQLConn = objConnect;
-            m_objSecurity = objSecurity;
-            if (m_objSecurity._fc_table)
+            m_objSecurity = objSecurity;if (m_objSecurity._fc_table)
             {
                 InitializeComponent();
                 LoadTable();

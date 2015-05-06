@@ -19,7 +19,7 @@ namespace iCafe
             Application.SetCompatibleTextRenderingDefault(false);
             SkinManager.EnableFormSkins();
             BonusSkins.Register();
-            UserLookAndFeel.Default.SetSkinStyle("Office 2010 Blue");
+            UserLookAndFeel.Default.SetSkinStyle("Office 2010 Sliver");
             Application.Run(new frmMain());
         }
     }
