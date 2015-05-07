@@ -356,9 +356,12 @@ namespace iCafe.Userform
 
         private void btnaddCus_Click(object sender, EventArgs e)
         {
-            var newCus =new frmCustomerAdd(new DataTable("Cus"),mobjConnection, mobjSecurity);
+            var newCus =new frmCustomerAdd(lookCus.Properties.DataSource as DataTable,mobjConnection, mobjSecurity);
             newCus.ShowDialog();
-            CusLoad();
+            lookCus.EditValue =
+                (Guid)
+                    (lookCus.Properties.DataSource as DataTable).Rows[
+                        (lookCus.Properties.DataSource as DataTable).Rows.Count - 1]["CusID"];
         }
     }
 }

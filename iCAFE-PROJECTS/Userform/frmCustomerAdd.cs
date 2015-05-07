@@ -88,8 +88,8 @@ namespace iCafe.Userform
                     objCusRow.Birthday = dateCusNS.DateTime;
                     objCusRow.Discount = spinCK.Value;
                     objCusTable.Rows.Add(objCusRow);
-                    Cctr.AddNew(objCusTable);
                     mobjCusTable.ImportRow(objCusRow);
+                    Cctr.AddNew(objCusTable);
                     XtraMessageBox.Show("Thêm khách hàng mới thành công");
                 }
             }
