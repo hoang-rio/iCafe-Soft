@@ -80,5 +80,6 @@ namespace iCafe.Userform
             {
                 XtraMessageBox.Show("Đã có lỗi. Chi tiết: " + exception.Message);
             }
-        }}
+        }
+    }
 }

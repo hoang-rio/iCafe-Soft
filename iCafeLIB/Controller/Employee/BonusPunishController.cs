@@ -87,31 +87,30 @@ namespace iCafeLIB.Controller.Employee
                 throw exception;
             }
         }
+
         /// <summary>
-        /// Tổng thưởng phạt theo tháng của 1 nhân viên
+        ///     Tổng thưởng phạt theo tháng của 1 nhân viên
         /// </summary>
         /// <param name="EmployID">Mã nhân viên</param>
         /// <returns></returns>
         public int OfEmploy(string EmployID)
         {
-            int return_val = 0;
+            var return_val = 0;
             DataTable objTable;
             try
             {
-                SqlParameter[] param=new SqlParameter[3];
-                param[0]=new SqlParameter("@Month",DateTime.Now.Month);
-                param[1]=new SqlParameter("@Year",DateTime.Now.Year);
-                param[2]=new SqlParameter("@EmployID",EmployID);
+                var param = new SqlParameter[3];
+                param[0] = new SqlParameter("@Month", DateTime.Now.Month);
+                param[1] = new SqlParameter("@Year", DateTime.Now.Year);
+                param[2] = new SqlParameter("@EmployID", EmployID);
                 objTable = mobjModelsinfo.ExecProcReturnTable(SP_BONUS_PUNISH_OFEMPLOY, param);
                 if (objTable.Rows.Count == 1)
                 {
                     return_val = int.Parse(objTable.Rows[0]["TotalBonusPunish"].ToString());
                 }
-
             }
             catch (Exception exception)
             {
-                
                 throw exception;
             }
             return return_val;

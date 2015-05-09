@@ -88,6 +88,7 @@
             this.bbtnDarkMode = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.bbtnFBillCusName = new DevExpress.XtraBars.BarButtonItem();
+            this.btnComputeSalary = new DevExpress.XtraBars.BarButtonItem();
             this.rbpSys = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbpGSkins = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbpGlogin = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -136,7 +137,6 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.bbtnFBillID = new DevExpress.XtraBars.BarButtonItem();
             this.bbtnFCusID = new DevExpress.XtraBars.BarButtonItem();
-            this.btnComputeSalary = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.VistaTimeProperties)).BeginInit();
@@ -721,6 +721,15 @@
             this.bbtnFBillCusName.Name = "bbtnFBillCusName";
             this.bbtnFBillCusName.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnFBillCusName_ItemClick);
             // 
+            // btnComputeSalary
+            // 
+            this.btnComputeSalary.Caption = "Tính lương";
+            this.btnComputeSalary.Id = 71;
+            this.btnComputeSalary.LargeGlyph = global::iCafe.Properties.Resources.Cash;
+            this.btnComputeSalary.LargeWidth = 70;
+            this.btnComputeSalary.Name = "btnComputeSalary";
+            this.btnComputeSalary.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnComputeSalary_ItemClick);
+            // 
             // rbpSys
             // 
             this.rbpSys.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1158,14 +1167,6 @@
             this.bbtnFCusID.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbtnFCusID.LargeGlyph")));
             this.bbtnFCusID.LargeWidth = 70;
             this.bbtnFCusID.Name = "bbtnFCusID";
-            // 
-            // btnComputeSalary
-            // 
-            this.btnComputeSalary.Caption = "Tính lương";
-            this.btnComputeSalary.Id = 71;
-            this.btnComputeSalary.LargeGlyph = global::iCafe.Properties.Resources.Cash;
-            this.btnComputeSalary.Name = "btnComputeSalary";
-            this.btnComputeSalary.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnComputeSalary_ItemClick);
             // 
             // frmMain
             // 

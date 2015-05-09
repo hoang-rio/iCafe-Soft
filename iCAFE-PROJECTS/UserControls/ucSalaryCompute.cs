@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
@@ -8,18 +7,19 @@ using iCafeLIB.Controller.Security;
 
 namespace iCafe.UserControls
 {
-    public partial class ucSalaryCompute : DevExpress.XtraEditors.XtraUserControl
+    public partial class ucSalaryCompute : XtraUserControl
     {
-        private SqlConnection mobjConnection;
-        private SecurityContext mobjSecurity;
-        public ucSalaryCompute(SqlConnection objConnection,SecurityContext objSecurityContext)
+        private readonly SqlConnection mobjConnection;
+        private readonly SecurityContext mobjSecurity;
+
+        public ucSalaryCompute(SqlConnection objConnection, SecurityContext objSecurityContext)
         {
             mobjSecurity = objSecurityContext;
             mobjConnection = objConnection;
             if (!mobjSecurity._fc_system)
             {
                 XtraMessageBox.Show("Bạn không có quyền truy cập mục này");
-                this.Dispose();
+                Dispose();
             }
             InitializeComponent();
             btnToxlsx.ItemClick += SaveToXlsx;
@@ -30,13 +30,14 @@ namespace iCafe.UserControls
 
         private void Close_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            Dispose();
         }
-        private void SaveToXlsx(object sender,EventArgs e)
+
+        private void SaveToXlsx(object sender, EventArgs e)
         {
             try
             {
-               SaveFileDialog sv=new SaveFileDialog();
+                var sv = new SaveFileDialog();
                 sv.Filter = "Exel 2010/2013 (*.xlsx)|*.xlsx";
                 sv.DefaultExt = "*.xlsx";
                 sv.Title = "Chọn nơi lưu file";
@@ -48,15 +49,15 @@ namespace iCafe.UserControls
             }
             catch (Exception exception)
             {
-
                 XtraMessageBox.Show("Đã có lỗi. Chi tiết: " + exception.Message);
             }
         }
+
         private void SaveToXls(object sender, EventArgs e)
         {
             try
             {
-                SaveFileDialog sv = new SaveFileDialog();
+                var sv = new SaveFileDialog();
                 sv.Filter = "Exel 2003-2007(*.xls)|*.xls";
                 sv.DefaultExt = "*.xls";
                 sv.Title = "Chọn nơi lưu file";
@@ -76,12 +77,11 @@ namespace iCafe.UserControls
         {
             try
             {
-                SalaryController sl=new SalaryController(mobjConnection,mobjSecurity);
+                var sl = new SalaryController(mobjConnection, mobjSecurity);
                 gridControl1.DataSource = sl.GetAll();
             }
             catch (Exception exception)
             {
-
                 XtraMessageBox.Show("Đã có lỗi. Chi tiết: " + exception.Message);
             }
         }

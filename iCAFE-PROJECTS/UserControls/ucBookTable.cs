@@ -26,7 +26,8 @@ namespace iCafe.UserControls
         public ucBookTable(SqlConnection objConnect, SecurityContext objSecurity)
         {
             m_objSQLConn = objConnect;
-            m_objSecurity = objSecurity;if (m_objSecurity._fc_table)
+            m_objSecurity = objSecurity;
+            if (m_objSecurity._fc_table)
             {
                 InitializeComponent();
                 LoadTable();
@@ -56,11 +57,11 @@ namespace iCafe.UserControls
                 var CusName = sBox.txtkeyWord.Text;
                 if (CusName != "")
                 {
-                    SplashScreenManager.ShowForm(typeof(frmwait));
+                    SplashScreenManager.ShowForm(typeof (frmwait));
                     var btController = new BookTableController(m_objSQLConn, m_objSecurity);
                     gridControl1.DataSource = btController.GetByCusName(CusName);
                     SplashScreenManager.CloseForm();
-                }               
+                }
                 sBox.Dispose();
             }
             catch (Exception exception)
@@ -84,7 +85,8 @@ namespace iCafe.UserControls
                 {
                 }
                 var bookTableAdd = new frmBookTableAdd(tabTable1.SelectedTabPage.Text,
-                    listViews[selectedTabIndex].Items[itemIndex].Text,listViews[tabTable1.SelectedTabPageIndex], m_objSQLConn, m_objSecurity);
+                    listViews[selectedTabIndex].Items[itemIndex].Text, listViews[tabTable1.SelectedTabPageIndex],
+                    m_objSQLConn, m_objSecurity);
                 bookTableAdd.ShowDialog();
                 GetBookTableByTableID(listViews[selectedTabIndex].Items[itemIndex].Name);
                 tabTable1.SelectedTabPageIndex = selectedTabIndex;
@@ -179,6 +181,7 @@ namespace iCafe.UserControls
         {
             //LoadData();
         }
+
         private void tabTable1_Click(object sender, EventArgs e)
         {
             try
@@ -210,7 +213,7 @@ namespace iCafe.UserControls
                 {
                     var btController = new BookTableController(m_objSQLConn, m_objSecurity);
                     btController.Delete(
-                        gridBookTable.GetRowCellValue(gridBookTable.FocusedRowHandle, "BTableID").ToString());                    
+                        gridBookTable.GetRowCellValue(gridBookTable.FocusedRowHandle, "BTableID").ToString());
                     if (gridBookTable.RowCount == 1)
                     {
                         listViews[tabTable1.SelectedTabPageIndex].Items[

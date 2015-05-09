@@ -996,16 +996,15 @@ namespace iCafe
         {
             try
             {
-                SplashScreenManager.ShowForm(typeof(frmwait));
+                SplashScreenManager.ShowForm(typeof (frmwait));
                 PanelMain.Controls.Clear();
                 var ucSl = new ucSalaryCompute(m_objConnection, m_objSecurity);
-                ucSl.Dock=DockStyle.Fill;
+                ucSl.Dock = DockStyle.Fill;
                 PanelMain.Controls.Add(ucSl);
                 SplashScreenManager.CloseForm();
             }
             catch (Exception)
             {
-                
             }
         }
     }
