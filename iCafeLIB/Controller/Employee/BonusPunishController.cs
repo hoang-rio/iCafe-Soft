@@ -13,6 +13,7 @@ namespace iCafeLIB.Controller.Employee
         private const string SP_BONUS_LOAD = "SP_BONUS_LOAD";
         private const string SP_PUNISH_LOAD = "SP_PUNISH_LOAD";
         private const string SP_BONUSPUNISH_ADD = "SP_BONUSPUNISH_ADD";
+        private const string SP_BONUS_PUNISH_OFEMPLOY = "SP_BONUS_PUNISH_OFEMPLOY";
         private readonly SqlConnection mobjConnection;
         private readonly ModelsInfo mobjModelsinfo;
         private SecurityContext mobjSecurity;
@@ -85,6 +86,35 @@ namespace iCafeLIB.Controller.Employee
             {
                 throw exception;
             }
+        }
+        /// <summary>
+        /// Tổng thưởng phạt theo tháng của 1 nhân viên
+        /// </summary>
+        /// <param name="EmployID">Mã nhân viên</param>
+        /// <returns></returns>
+        public int OfEmploy(string EmployID)
+        {
+            int return_val = 0;
+            DataTable objTable;
+            try
+            {
+                SqlParameter[] param=new SqlParameter[3];
+                param[0]=new SqlParameter("@Month",DateTime.Now.Month);
+                param[1]=new SqlParameter("@Year",DateTime.Now.Year);
+                param[2]=new SqlParameter("@EmployID",EmployID);
+                objTable = mobjModelsinfo.ExecProcReturnTable(SP_BONUS_PUNISH_OFEMPLOY, param);
+                if (objTable.Rows.Count == 1)
+                {
+                    return_val = int.Parse(objTable.Rows[0]["TotalBonusPunish"].ToString());
+                }
+
+            }
+            catch (Exception exception)
+            {
+                
+                throw exception;
+            }
+            return return_val;
         }
     }
 }

@@ -70,6 +70,7 @@
     <Reference Include="DevExpress.Data.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.Printing.v12.1.Core, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.RichEdit.v12.1.Core, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
     </Reference>
@@ -138,6 +139,12 @@
     </Compile>
     <Compile Include="UserControls\ucImportExport.Designer.cs">
       <DependentUpon>ucImportExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucSalaryCompute.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucSalaryCompute.Designer.cs">
+      <DependentUpon>ucSalaryCompute.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ucTableByZone.cs">
       <SubType>UserControl</SubType>
@@ -447,6 +454,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucImportExport.resx">
       <DependentUpon>ucImportExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucSalaryCompute.resx">
+      <DependentUpon>ucSalaryCompute.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucTableByZone.resx">
       <DependentUpon>ucTableByZone.cs</DependentUpon>
@@ -867,6 +877,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="iCafe.ico" />
+    <None Include="Resources\setdate.png" />
+    <None Include="Resources\xls.png" />
+    <None Include="Resources\xlsx1.png" />
+    <None Include="Resources\xlsx.png" />
     <None Include="Resources\People-48.png" />
     <None Include="Resources\money_48.png" />
     <None Include="Resources\gear_16.png" />

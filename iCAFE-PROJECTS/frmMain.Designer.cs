@@ -136,6 +136,7 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.bbtnFBillID = new DevExpress.XtraBars.BarButtonItem();
             this.bbtnFCusID = new DevExpress.XtraBars.BarButtonItem();
+            this.btnComputeSalary = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.VistaTimeProperties)).BeginInit();
@@ -211,10 +212,11 @@
             this.bbtnFontconfig,
             this.bbtnDarkMode,
             this.barSubItem1,
-            this.bbtnFBillCusName});
+            this.bbtnFBillCusName,
+            this.btnComputeSalary});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbon.MaxItemId = 71;
+            this.ribbon.MaxItemId = 72;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbpSys,
@@ -784,6 +786,7 @@
             // ribbonPageGroup9
             // 
             this.ribbonPageGroup9.ItemLinks.Add(this.bbtnLuong);
+            this.ribbonPageGroup9.ItemLinks.Add(this.btnComputeSalary);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "Lương";
             // 
@@ -1156,6 +1159,14 @@
             this.bbtnFCusID.LargeWidth = 70;
             this.bbtnFCusID.Name = "bbtnFCusID";
             // 
+            // btnComputeSalary
+            // 
+            this.btnComputeSalary.Caption = "Tính lương";
+            this.btnComputeSalary.Id = 71;
+            this.btnComputeSalary.LargeGlyph = global::iCafe.Properties.Resources.Cash;
+            this.btnComputeSalary.Name = "btnComputeSalary";
+            this.btnComputeSalary.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnComputeSalary_ItemClick);
+            // 
             // frmMain
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
@@ -1302,5 +1313,6 @@
         private DevExpress.XtraBars.BarButtonItem bbtnFBillID;
         private DevExpress.XtraBars.BarButtonItem bbtnFCusID;
         private DevExpress.XtraBars.BarButtonItem bbtnFBillCusName;
+        private DevExpress.XtraBars.BarButtonItem btnComputeSalary;
     }
 }

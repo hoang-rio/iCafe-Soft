@@ -991,5 +991,22 @@ namespace iCafe
             {
             }
         }
+
+        private void btnComputeSalary_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                SplashScreenManager.ShowForm(typeof(frmwait));
+                PanelMain.Controls.Clear();
+                var ucSl = new ucSalaryCompute(m_objConnection, m_objSecurity);
+                ucSl.Dock=DockStyle.Fill;
+                PanelMain.Controls.Add(ucSl);
+                SplashScreenManager.CloseForm();
+            }
+            catch (Exception)
+            {
+                
+            }
+        }
     }
 }

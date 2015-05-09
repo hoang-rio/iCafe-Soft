@@ -833,6 +833,16 @@ namespace iCafe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap setdate {
+            get {
+                object obj = ResourceManager.GetObject("setdate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap settings_16 {
             get {
                 object obj = ResourceManager.GetObject("settings_16", resourceCulture);
@@ -1016,6 +1026,36 @@ namespace iCafe.Properties {
         internal static System.Drawing.Bitmap x_office_address_book1 {
             get {
                 object obj = ResourceManager.GetObject("x-office-address-book1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap xls {
+            get {
+                object obj = ResourceManager.GetObject("xls", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap xlsx {
+            get {
+                object obj = ResourceManager.GetObject("xlsx", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap xlsx1 {
+            get {
+                object obj = ResourceManager.GetObject("xlsx1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
