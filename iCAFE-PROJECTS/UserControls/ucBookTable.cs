@@ -51,6 +51,7 @@ namespace iCafe.UserControls
             {
                 var sBox = new frmSearchBox(0, m_objSQLConn, m_objSecurity);
                 sBox.Text = "Tìm theo tên khách hàng";
+                sBox.ucUpdate1.btnFCapNhat.Caption = "Tìm kiếm";
                 sBox.ShowDialog();
                 var CusName = sBox.txtkeyWord.Text;
                 if (CusName != "")

@@ -107,10 +107,10 @@
 
         #endregion
 
-        private BaseControls.ucUpdate ucUpdate1;
         private DevExpress.XtraEditors.LabelControl lblCa;
         public DevExpress.XtraEditors.LookUpEdit lookWS;
         public DevExpress.XtraEditors.TextEdit txtkeyWord;
         private DevExpress.XtraEditors.LabelControl lblkeyword;
+        public BaseControls.ucUpdate ucUpdate1;
     }
 }

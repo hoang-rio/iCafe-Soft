@@ -44,7 +44,7 @@ namespace iCafe.Userform
                 var eCtrl = new EmployeeController(mobjConnection, mobjSecurity);
                 lookEmploy.Properties.DataSource = eCtrl.GetAll();
                 lookEmploy.Properties.DisplayMember = "FullName";
-                lookEmploy.Properties.ValueMember = "FullName";
+                lookEmploy.Properties.ValueMember = "EmployID";
             }
             catch (Exception exception)
             {
@@ -58,10 +58,8 @@ namespace iCafe.Userform
             {
                 var objTable = new iCafeDataEn.iCafe_Bonus_PunishDataTable();
                 var row = objTable.NewiCafe_Bonus_PunishRow();
-                row.EmployID =
-                    (Guid)
-                        lookEmploy.Properties.View.GetRowCellValue(lookEmploy.Properties.View.FocusedRowHandle,
-                            "EmployID");
+                row.EmployID = (Guid) lookEmploy.EditValue;
+
                 row.Content = txtContent.Text;
                 row.Time = DateTime.Now;
                 if (cbType.SelectedIndex == 0)
@@ -82,6 +80,5 @@ namespace iCafe.Userform
             {
                 XtraMessageBox.Show("Đã có lỗi. Chi tiết: " + exception.Message);
             }
-        }
-    }
+        }}
 }

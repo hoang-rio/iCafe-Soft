@@ -73,7 +73,7 @@ namespace iCafe.Userform
             this.groupKH.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupKH.Location = new System.Drawing.Point(0, 50);
             this.groupKH.Name = "groupKH";
-            this.groupKH.Size = new System.Drawing.Size(323, 218);
+            this.groupKH.Size = new System.Drawing.Size(355, 218);
             this.groupKH.TabIndex = 7;
             this.groupKH.Text = "Cập nhật thưởng phạt";
             // 
@@ -179,14 +179,14 @@ namespace iCafe.Userform
             this.ucUpdate1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ucUpdate1.Location = new System.Drawing.Point(0, 0);
             this.ucUpdate1.Name = "ucUpdate1";
-            this.ucUpdate1.Size = new System.Drawing.Size(323, 50);
+            this.ucUpdate1.Size = new System.Drawing.Size(355, 50);
             this.ucUpdate1.TabIndex = 6;
             // 
             // frmBonusPunishAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(323, 268);
+            this.ClientSize = new System.Drawing.Size(355, 268);
             this.ControlBox = false;
             this.Controls.Add(this.groupKH);
             this.Controls.Add(this.ucUpdate1);
