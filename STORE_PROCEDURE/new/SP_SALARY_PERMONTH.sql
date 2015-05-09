@@ -25,7 +25,7 @@ BEGIN
 	-- interfering with SELECT statements.
 	SET NOCOUNT ON;
 
-SELECT iCafe_Employee.EmployID,Fullname,iCafe_Permission.SalaryValue+iCafe_Permission.SalaryOverTime*NumOvertime As [Salary],convert(varchar,MONTH(GETDATE()),103)+'/'+convert(varchar,YEAR(GETDATE()),103) as [SalryOfMonth]
+SELECT iCafe_Employee.EmployID,Fullname,iCafe_Permission.SalaryValue+iCafe_Permission.SalaryOverTime*NumOvertime As [Salary],convert(varchar,MONTH(GETDATE()),103)+'/'+convert(varchar,YEAR(GETDATE()),103) as [SalaryOfMonth]
 from iCafe_Employee,iCafe_Bonus_Punish,iCafe_Permission
 Where iCafe_Employee.EmployID=iCafe_Bonus_Punish.EmployID
 and iCafe_Employee.PerID=iCafe_Permission.PerID
