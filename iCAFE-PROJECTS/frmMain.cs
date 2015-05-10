@@ -521,8 +521,16 @@ namespace iCafe
         {
             try
             {
-                var cDiscount = new frmChangDiscount(m_objConnection, m_objSecurity);
-                cDiscount.ShowDialog();
+                if (m_objSecurity._fc_Customer)
+                {
+                    var cDiscount = new frmChangDiscount(m_objConnection, m_objSecurity);
+                    cDiscount.ShowDialog();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Bạn không có quyền truy cập mục này");
+                }
+               
             }
             catch (Exception)
             {
@@ -1005,6 +1013,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
     }

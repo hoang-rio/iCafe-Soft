@@ -25,6 +25,11 @@ namespace iCafe.UserControls
             btnToxlsx.ItemClick += SaveToXlsx;
             btnToxls.ItemClick += SaveToXls;
             btnClose.ItemClick += Close_Click;
+            cbYear.Properties.Items.Clear();
+            for (int i = DateTime.Now.Year; i>=DateTime.Now.Year-2;i--)
+            {
+                cbYear.Properties.Items.Add(i.ToString());
+            }
             Compute_salary();
         }
 
@@ -79,6 +84,27 @@ namespace iCafe.UserControls
             {
                 var sl = new SalaryController(mobjConnection, mobjSecurity);
                 gridControl1.DataSource = sl.GetAll(DateTime.Now.Month,DateTime.Now.Year);
+            }
+            catch (Exception exception)
+            {
+                XtraMessageBox.Show("Đã có lỗi. Chi tiết: " + exception.Message);
+            }
+        }
+
+        private void cbMonth_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbYear.SelectedIndex == -1)
+            {
+                cbYear.SelectedIndex = 0;
+            }
+            if (cbMonth.SelectedIndex == -1)
+            {
+                cbMonth.SelectedIndex = 0;
+            }
+            try
+            {
+                var sl = new SalaryController(mobjConnection, mobjSecurity);
+                gridControl1.DataSource = sl.GetAll(int.Parse(cbMonth.SelectedItem.ToString()), int.Parse(cbYear.SelectedItem.ToString()));
             }
             catch (Exception exception)
             {
