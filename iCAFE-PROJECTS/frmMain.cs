@@ -119,8 +119,8 @@ namespace iCafe
 
         private void SetFont()
         {
-            var f = new Font(ConfigurationSettings.AppSettings.Get("font"),
-                int.Parse(ConfigurationSettings.AppSettings.Get("fontsize")), FontStyle.Regular);
+            var f = new Font(ConfigurationManager.AppSettings.Get("font"),
+                int.Parse(ConfigurationManager.AppSettings.Get("fontsize")), FontStyle.Regular);
             BarAndDockingController.Default.AppearancesRibbon.PageHeader.Font = f;
             BarAndDockingController.Default.AppearancesRibbon.PageCategory.Font = f;
             BarAndDockingController.Default.AppearancesRibbon.PageGroupCaption.Font = f;
@@ -155,6 +155,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -181,6 +182,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -198,6 +200,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -216,6 +219,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -233,6 +237,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -246,6 +251,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -282,6 +288,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -308,6 +315,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -325,6 +333,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -343,6 +352,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -360,6 +370,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -377,6 +388,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -438,6 +450,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -481,6 +494,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -498,6 +512,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -552,6 +567,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -584,6 +600,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -598,6 +615,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -644,6 +662,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+
             }
         }
 
@@ -674,6 +693,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -696,6 +716,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -714,6 +735,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -732,6 +754,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -748,6 +771,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -764,6 +788,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -780,6 +805,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -796,6 +822,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -810,6 +837,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -910,6 +938,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -938,6 +967,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -954,6 +984,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -970,6 +1001,7 @@ namespace iCafe
             }
             catch (Exception)
             {
+                SplashScreenManager.CloseForm();
             }
         }
 
