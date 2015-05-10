@@ -549,7 +549,7 @@
             // 
             // sstTxtTrangthai
             // 
-            this.sstTxtTrangthai.Caption = "iCafe v1.0";
+            this.sstTxtTrangthai.Caption = "iCafe v1.1";
             this.sstTxtTrangthai.Id = 40;
             this.sstTxtTrangthai.Name = "sstTxtTrangthai";
             this.sstTxtTrangthai.TextAlignment = System.Drawing.StringAlignment.Near;

@@ -93,15 +93,15 @@ namespace iCafeLIB.Controller.Employee
         /// </summary>
         /// <param name="EmployID">Mã nhân viên</param>
         /// <returns></returns>
-        public int OfEmploy(string EmployID)
+        public int OfEmploy(string EmployID,int Month,int Year)
         {
             var return_val = 0;
             DataTable objTable;
             try
             {
                 var param = new SqlParameter[3];
-                param[0] = new SqlParameter("@Month", DateTime.Now.Month);
-                param[1] = new SqlParameter("@Year", DateTime.Now.Year);
+                param[0] = new SqlParameter("@Month", Month);
+                param[1] = new SqlParameter("@Year", Year);
                 param[2] = new SqlParameter("@EmployID", EmployID);
                 objTable = mobjModelsinfo.ExecProcReturnTable(SP_BONUS_PUNISH_OFEMPLOY, param);
                 if (objTable.Rows.Count == 1)

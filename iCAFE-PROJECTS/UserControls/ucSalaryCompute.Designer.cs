@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip5 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem5 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip6 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem6 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip7 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem7 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip8 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem8 = new DevExpress.Utils.ToolTipTitleItem();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Fullname = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -55,6 +55,7 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.SalaryOverTime = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -78,7 +79,8 @@
             this.Salary,
             this.TotalBonusPunish,
             this.SalaryOfMonth,
-            this.Total});
+            this.Total,
+            this.SalaryOverTime});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -105,7 +107,8 @@
             this.Salary.AppearanceHeader.Options.UseTextOptions = true;
             this.Salary.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Salary.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.Salary.Caption = "Lương + Lương Ngoài Giờ";
+            this.Salary.Caption = "Lương";
+            this.Salary.DisplayFormat.FormatString = "c";
             this.Salary.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.Salary.FieldName = "Salary";
             this.Salary.Name = "Salary";
@@ -121,10 +124,12 @@
             this.TotalBonusPunish.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TotalBonusPunish.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.TotalBonusPunish.Caption = "Tổng thưởng phạt";
+            this.TotalBonusPunish.DisplayFormat.FormatString = "c";
+            this.TotalBonusPunish.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.TotalBonusPunish.FieldName = "TotalBonusPunish";
             this.TotalBonusPunish.Name = "TotalBonusPunish";
             this.TotalBonusPunish.Visible = true;
-            this.TotalBonusPunish.VisibleIndex = 2;
+            this.TotalBonusPunish.VisibleIndex = 3;
             // 
             // SalaryOfMonth
             // 
@@ -135,10 +140,12 @@
             this.SalaryOfMonth.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.SalaryOfMonth.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.SalaryOfMonth.Caption = "Lương tháng";
+            this.SalaryOfMonth.DisplayFormat.FormatString = "c";
+            this.SalaryOfMonth.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.SalaryOfMonth.FieldName = "SalaryOfMonth";
             this.SalaryOfMonth.Name = "SalaryOfMonth";
             this.SalaryOfMonth.Visible = true;
-            this.SalaryOfMonth.VisibleIndex = 4;
+            this.SalaryOfMonth.VisibleIndex = 5;
             // 
             // Total
             // 
@@ -149,10 +156,12 @@
             this.Total.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Total.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Total.Caption = "Tổng cộng";
+            this.Total.DisplayFormat.FormatString = "c";
+            this.Total.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.Total.FieldName = "Total";
             this.Total.Name = "Total";
             this.Total.Visible = true;
-            this.Total.VisibleIndex = 3;
+            this.Total.VisibleIndex = 4;
             // 
             // barManager1
             // 
@@ -201,12 +210,12 @@
             this.btnToxlsx.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E));
             this.btnToxlsx.MinSize = new System.Drawing.Size(80, 0);
             this.btnToxlsx.Name = "btnToxlsx";
-            toolTipTitleItem1.Appearance.Image = global::iCafe.Properties.Resources.xlsx1;
-            toolTipTitleItem1.Appearance.Options.UseImage = true;
-            toolTipTitleItem1.Image = global::iCafe.Properties.Resources.xlsx1;
-            toolTipTitleItem1.Text = "Xuất ra Exel (xlsx) (Ctrl+E)";
-            superToolTip1.Items.Add(toolTipTitleItem1);
-            this.btnToxlsx.SuperTip = superToolTip1;
+            toolTipTitleItem5.Appearance.Image = global::iCafe.Properties.Resources.xlsx1;
+            toolTipTitleItem5.Appearance.Options.UseImage = true;
+            toolTipTitleItem5.Image = global::iCafe.Properties.Resources.xlsx1;
+            toolTipTitleItem5.Text = "Xuất ra Exel (xlsx) (Ctrl+E)";
+            superToolTip5.Items.Add(toolTipTitleItem5);
+            this.btnToxlsx.SuperTip = superToolTip5;
             // 
             // btnToxls
             // 
@@ -217,12 +226,12 @@
             this.btnToxls.LargeGlyph = global::iCafe.Properties.Resources.xls;
             this.btnToxls.MinSize = new System.Drawing.Size(80, 0);
             this.btnToxls.Name = "btnToxls";
-            toolTipTitleItem2.Appearance.Image = global::iCafe.Properties.Resources.xls;
-            toolTipTitleItem2.Appearance.Options.UseImage = true;
-            toolTipTitleItem2.Image = global::iCafe.Properties.Resources.xls;
-            toolTipTitleItem2.Text = "Xuất ra Exel (xls) (Ctrl+Shift+E)";
-            superToolTip2.Items.Add(toolTipTitleItem2);
-            this.btnToxls.SuperTip = superToolTip2;
+            toolTipTitleItem6.Appearance.Image = global::iCafe.Properties.Resources.xls;
+            toolTipTitleItem6.Appearance.Options.UseImage = true;
+            toolTipTitleItem6.Image = global::iCafe.Properties.Resources.xls;
+            toolTipTitleItem6.Text = "Xuất ra Exel (xls) (Ctrl+Shift+E)";
+            superToolTip6.Items.Add(toolTipTitleItem6);
+            this.btnToxls.SuperTip = superToolTip6;
             // 
             // btnSetDate
             // 
@@ -232,12 +241,12 @@
             this.btnSetDate.LargeGlyph = global::iCafe.Properties.Resources.setdate;
             this.btnSetDate.MinSize = new System.Drawing.Size(80, 0);
             this.btnSetDate.Name = "btnSetDate";
-            toolTipTitleItem3.Appearance.Image = global::iCafe.Properties.Resources.setdate;
-            toolTipTitleItem3.Appearance.Options.UseImage = true;
-            toolTipTitleItem3.Image = global::iCafe.Properties.Resources.setdate;
-            toolTipTitleItem3.Text = "Đặt ngày tính lương (Ctrl+D)";
-            superToolTip3.Items.Add(toolTipTitleItem3);
-            this.btnSetDate.SuperTip = superToolTip3;
+            toolTipTitleItem7.Appearance.Image = global::iCafe.Properties.Resources.setdate;
+            toolTipTitleItem7.Appearance.Options.UseImage = true;
+            toolTipTitleItem7.Image = global::iCafe.Properties.Resources.setdate;
+            toolTipTitleItem7.Text = "Đặt ngày tính lương (Ctrl+D)";
+            superToolTip7.Items.Add(toolTipTitleItem7);
+            this.btnSetDate.SuperTip = superToolTip7;
             // 
             // btnClose
             // 
@@ -247,12 +256,12 @@
             this.btnClose.LargeGlyph = global::iCafe.Properties.Resources.cancel;
             this.btnClose.MinSize = new System.Drawing.Size(80, 0);
             this.btnClose.Name = "btnClose";
-            toolTipTitleItem4.Appearance.Image = global::iCafe.Properties.Resources.cancel;
-            toolTipTitleItem4.Appearance.Options.UseImage = true;
-            toolTipTitleItem4.Image = global::iCafe.Properties.Resources.cancel;
-            toolTipTitleItem4.Text = "Đóng (Alt+F4)";
-            superToolTip4.Items.Add(toolTipTitleItem4);
-            this.btnClose.SuperTip = superToolTip4;
+            toolTipTitleItem8.Appearance.Image = global::iCafe.Properties.Resources.cancel;
+            toolTipTitleItem8.Appearance.Options.UseImage = true;
+            toolTipTitleItem8.Image = global::iCafe.Properties.Resources.cancel;
+            toolTipTitleItem8.Text = "Đóng (Alt+F4)";
+            superToolTip8.Items.Add(toolTipTitleItem8);
+            this.btnClose.SuperTip = superToolTip8;
             // 
             // bar3
             // 
@@ -294,6 +303,22 @@
             this.barDockControlRight.Location = new System.Drawing.Point(859, 42);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 449);
             // 
+            // SalaryOverTime
+            // 
+            this.SalaryOverTime.AppearanceCell.Options.UseTextOptions = true;
+            this.SalaryOverTime.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.SalaryOverTime.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.SalaryOverTime.AppearanceHeader.Options.UseTextOptions = true;
+            this.SalaryOverTime.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.SalaryOverTime.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.SalaryOverTime.Caption = "Lương ngoài giờ";
+            this.SalaryOverTime.DisplayFormat.FormatString = "c";
+            this.SalaryOverTime.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.SalaryOverTime.FieldName = "SalaryOverTime";
+            this.SalaryOverTime.Name = "SalaryOverTime";
+            this.SalaryOverTime.Visible = true;
+            this.SalaryOverTime.VisibleIndex = 2;
+            // 
             // ucSalaryCompute
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,6 +357,7 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraGrid.Columns.GridColumn SalaryOverTime;
 
     }
 }

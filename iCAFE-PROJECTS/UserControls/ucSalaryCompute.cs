@@ -78,7 +78,7 @@ namespace iCafe.UserControls
             try
             {
                 var sl = new SalaryController(mobjConnection, mobjSecurity);
-                gridControl1.DataSource = sl.GetAll();
+                gridControl1.DataSource = sl.GetAll(DateTime.Now.Month,DateTime.Now.Year);
             }
             catch (Exception exception)
             {
