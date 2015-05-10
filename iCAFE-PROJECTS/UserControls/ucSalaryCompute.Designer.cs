@@ -56,6 +56,7 @@
             this.cbMonth = new DevExpress.XtraEditors.ComboBoxEdit();
             this.cbYear = new DevExpress.XtraEditors.ComboBoxEdit();
             this.label1 = new System.Windows.Forms.Label();
+            this.PerName = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -82,7 +83,8 @@
             this.TotalBonusPunish,
             this.SalaryOfMonth,
             this.Total,
-            this.SalaryOverTime});
+            this.SalaryOverTime,
+            this.PerName});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -115,7 +117,7 @@
             this.Salary.FieldName = "Salary";
             this.Salary.Name = "Salary";
             this.Salary.Visible = true;
-            this.Salary.VisibleIndex = 1;
+            this.Salary.VisibleIndex = 2;
             // 
             // TotalBonusPunish
             // 
@@ -131,7 +133,7 @@
             this.TotalBonusPunish.FieldName = "TotalBonusPunish";
             this.TotalBonusPunish.Name = "TotalBonusPunish";
             this.TotalBonusPunish.Visible = true;
-            this.TotalBonusPunish.VisibleIndex = 3;
+            this.TotalBonusPunish.VisibleIndex = 4;
             // 
             // SalaryOfMonth
             // 
@@ -147,7 +149,7 @@
             this.SalaryOfMonth.FieldName = "SalaryOfMonth";
             this.SalaryOfMonth.Name = "SalaryOfMonth";
             this.SalaryOfMonth.Visible = true;
-            this.SalaryOfMonth.VisibleIndex = 5;
+            this.SalaryOfMonth.VisibleIndex = 6;
             // 
             // Total
             // 
@@ -163,7 +165,7 @@
             this.Total.FieldName = "Total";
             this.Total.Name = "Total";
             this.Total.Visible = true;
-            this.Total.VisibleIndex = 4;
+            this.Total.VisibleIndex = 5;
             // 
             // SalaryOverTime
             // 
@@ -179,7 +181,7 @@
             this.SalaryOverTime.FieldName = "SalaryOverTime";
             this.SalaryOverTime.Name = "SalaryOverTime";
             this.SalaryOverTime.Visible = true;
-            this.SalaryOverTime.VisibleIndex = 2;
+            this.SalaryOverTime.VisibleIndex = 3;
             // 
             // barManager1
             // 
@@ -347,6 +349,20 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Năm";
             // 
+            // PerName
+            // 
+            this.PerName.AppearanceCell.Options.UseTextOptions = true;
+            this.PerName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.PerName.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.PerName.AppearanceHeader.Options.UseTextOptions = true;
+            this.PerName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.PerName.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.PerName.Caption = "Chức vụ";
+            this.PerName.FieldName = "PerName";
+            this.PerName.Name = "PerName";
+            this.PerName.Visible = true;
+            this.PerName.VisibleIndex = 1;
+            // 
             // ucSalaryCompute
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -395,6 +411,7 @@
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.ComboBoxEdit cbMonth;
         private System.Windows.Forms.Label lblthang;
+        private DevExpress.XtraGrid.Columns.GridColumn PerName;
 
     }
 }
