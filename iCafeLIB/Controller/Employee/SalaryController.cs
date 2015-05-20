@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using DevExpress.Utils.Drawing.Helpers;
 using iCafeLIB.Controller.Security;
 using iCafeLIB.Models.BaseUntils;
 
@@ -26,16 +25,16 @@ namespace iCafeLIB.Controller.Employee
         ///     Lấy thông tin lương
         /// </summary>
         /// <returns></returns>
-        public DataTable GetAll(int Month,int Year)
+        public DataTable GetAll(int Month, int Year)
         {
             DataTable objTable;
             try
             {
-                SqlParameter[] param=new SqlParameter[2];
-                param[0]=new SqlParameter("@Month",Month);
-                param[1]=new SqlParameter("@Year",Year);
-                objTable = mobjModelsInfo.ExecProcReturnTable(SP_SALARY_PERMONTH,param);
-                Add_BonusPunishTo(objTable,Month,Year);
+                var param = new SqlParameter[2];
+                param[0] = new SqlParameter("@Month", Month);
+                param[1] = new SqlParameter("@Year", Year);
+                objTable = mobjModelsInfo.ExecProcReturnTable(SP_SALARY_PERMONTH, param);
+                Add_BonusPunishTo(objTable, Month, Year);
             }
             catch (Exception exception)
             {
@@ -44,7 +43,7 @@ namespace iCafeLIB.Controller.Employee
             return objTable;
         }
 
-        private int Salary_OverTime(string EmployID,int Month, int Year)
+        private int Salary_OverTime(string EmployID, int Month, int Year)
         {
             var return_val = 0;
             DataTable objTable;
@@ -66,16 +65,17 @@ namespace iCafeLIB.Controller.Employee
             }
             return return_val;
         }
+
         /// <summary>
         ///     Tính thông tin thưởng phạt vào bảng lương
         /// </summary>
         /// <param name="objTable"></param>
-        private void Add_BonusPunishTo(DataTable objTable,int Month,int Year)
+        private void Add_BonusPunishTo(DataTable objTable, int Month, int Year)
         {
-            Decimal sumSalary=0;
+            Decimal sumSalary = 0;
             Decimal sumSaryOverTime = 0;
             Decimal sumBonusPunish = 0;
-            Decimal sumTotal=0;
+            Decimal sumTotal = 0;
             try
             {
                 objTable.Columns.Add("TotalBonusPunish", Type.GetType("System.Decimal"));
@@ -85,17 +85,19 @@ namespace iCafeLIB.Controller.Employee
                 var bp = new BonusPunishController(mobjConnection, mobjSecurity);
                 for (var i = 0; i < objTable.Rows.Count; i++)
                 {
-                    objTable.Rows[i]["TotalBonusPunish"] = bp.OfEmploy(objTable.Rows[i]["EmployID"].ToString(),Month,Year);
+                    objTable.Rows[i]["TotalBonusPunish"] = bp.OfEmploy(objTable.Rows[i]["EmployID"].ToString(), Month,
+                        Year);
                     objTable.Rows[i]["SalaryOverTime"] = Salary_OverTime(objTable.Rows[i]["EmployID"].ToString(), Month,
                         Year);
                     objTable.Rows[i]["Total"] = (Decimal) objTable.Rows[i]["TotalBonusPunish"] +
-                                                (Decimal) objTable.Rows[i]["Salary"]+(Decimal)objTable.Rows[i]["SalaryOverTime"];
+                                                (Decimal) objTable.Rows[i]["Salary"] +
+                                                (Decimal) objTable.Rows[i]["SalaryOverTime"];
                     sumSalary += (Decimal) objTable.Rows[i]["Salary"];
-                    sumBonusPunish += (Decimal)objTable.Rows[i]["TotalBonusPunish"];
-                    sumSaryOverTime += (Decimal)objTable.Rows[i]["SalaryOverTime"];
-                    sumTotal += (Decimal)objTable.Rows[i]["Total"];
-               }
-                DataRow row = objTable.NewRow();
+                    sumBonusPunish += (Decimal) objTable.Rows[i]["TotalBonusPunish"];
+                    sumSaryOverTime += (Decimal) objTable.Rows[i]["SalaryOverTime"];
+                    sumTotal += (Decimal) objTable.Rows[i]["Total"];
+                }
+                var row = objTable.NewRow();
                 row["EmployID"] = Guid.Empty;
                 row["Fullname"] = "[TỔNG CỘNG]";
                 row["Salary"] = sumSalary;

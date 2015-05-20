@@ -26,7 +26,7 @@ namespace iCafe.UserControls
             btnToxls.ItemClick += SaveToXls;
             btnClose.ItemClick += Close_Click;
             cbYear.Properties.Items.Clear();
-            for (int i = DateTime.Now.Year; i>=DateTime.Now.Year-2;i--)
+            for (var i = DateTime.Now.Year; i >= DateTime.Now.Year - 2; i--)
             {
                 cbYear.Properties.Items.Add(i.ToString());
             }
@@ -83,7 +83,7 @@ namespace iCafe.UserControls
             try
             {
                 var sl = new SalaryController(mobjConnection, mobjSecurity);
-                gridControl1.DataSource = sl.GetAll(DateTime.Now.Month,DateTime.Now.Year);
+                gridControl1.DataSource = sl.GetAll(DateTime.Now.Month, DateTime.Now.Year);
             }
             catch (Exception exception)
             {
@@ -104,7 +104,8 @@ namespace iCafe.UserControls
             try
             {
                 var sl = new SalaryController(mobjConnection, mobjSecurity);
-                gridControl1.DataSource = sl.GetAll(int.Parse(cbMonth.SelectedItem.ToString()), int.Parse(cbYear.SelectedItem.ToString()));
+                gridControl1.DataSource = sl.GetAll(int.Parse(cbMonth.SelectedItem.ToString()),
+                    int.Parse(cbYear.SelectedItem.ToString()));
             }
             catch (Exception exception)
             {

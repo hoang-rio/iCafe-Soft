@@ -545,7 +545,6 @@ namespace iCafe
                 {
                     XtraMessageBox.Show("Bạn không có quyền truy cập mục này");
                 }
-               
             }
             catch (Exception)
             {
@@ -662,7 +661,6 @@ namespace iCafe
             }
             catch (Exception)
             {
-
             }
         }
 

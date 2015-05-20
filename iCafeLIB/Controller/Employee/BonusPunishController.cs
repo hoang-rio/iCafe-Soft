@@ -93,7 +93,7 @@ namespace iCafeLIB.Controller.Employee
         /// </summary>
         /// <param name="EmployID">Mã nhân viên</param>
         /// <returns></returns>
-        public int OfEmploy(string EmployID,int Month,int Year)
+        public int OfEmploy(string EmployID, int Month, int Year)
         {
             var return_val = 0;
             DataTable objTable;
