@@ -40,25 +40,25 @@ namespace iCafe.Userform
             this.spinQuantity = new DevExpress.XtraEditors.SpinEdit();
             this.label2 = new System.Windows.Forms.Label();
             this.lookFood = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.lookFGroup = new DevExpress.XtraEditors.LookUpEdit();
-            this.label3 = new System.Windows.Forms.Label();
-            this.picFood = new DevExpress.XtraEditors.PictureEdit();
             this.repositoryItemImageEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageEdit();
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.repositoryItemPictureEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.FoodName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Funit = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lookFGroup = new DevExpress.XtraEditors.LookUpEdit();
+            this.label3 = new System.Windows.Forms.Label();
+            this.picFood = new DevExpress.XtraEditors.PictureEdit();
             this.ucUpdate1 = new iCafe.BaseControls.ucUpdate();
             ((System.ComponentModel.ISupportInitialize)(this.spinQuantity.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookFood.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookFGroup.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picFood.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookFGroup.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFood.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -121,6 +121,21 @@ namespace iCafe.Userform
             this.lookFood.TabIndex = 5;
             this.lookFood.EditValueChanged += new System.EventHandler(this.lookFood_EditValueChanged);
             // 
+            // repositoryItemImageEdit1
+            // 
+            this.repositoryItemImageEdit1.AutoHeight = false;
+            this.repositoryItemImageEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemImageEdit1.Name = "repositoryItemImageEdit1";
+            // 
+            // repositoryItemPictureEdit1
+            // 
+            this.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1";
+            // 
+            // repositoryItemPictureEdit2
+            // 
+            this.repositoryItemPictureEdit2.Name = "repositoryItemPictureEdit2";
+            // 
             // searchLookUpEdit1View
             // 
             this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -131,6 +146,30 @@ namespace iCafe.Userform
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // FoodName
+            // 
+            this.FoodName.Caption = "Tên món";
+            this.FoodName.FieldName = "FoodName";
+            this.FoodName.Name = "FoodName";
+            this.FoodName.Visible = true;
+            this.FoodName.VisibleIndex = 0;
+            // 
+            // Funit
+            // 
+            this.Funit.Caption = "Đơn vị tính";
+            this.Funit.FieldName = "FUnit";
+            this.Funit.Name = "Funit";
+            this.Funit.Visible = true;
+            this.Funit.VisibleIndex = 1;
+            // 
+            // FPrice
+            // 
+            this.FPrice.Caption = "Giá (VNĐ)";
+            this.FPrice.FieldName = "FPrice";
+            this.FPrice.Name = "FPrice";
+            this.FPrice.Visible = true;
+            this.FPrice.VisibleIndex = 2;
             // 
             // lookFGroup
             // 
@@ -162,45 +201,6 @@ namespace iCafe.Userform
             this.picFood.Size = new System.Drawing.Size(125, 121);
             this.picFood.TabIndex = 7;
             // 
-            // repositoryItemImageEdit1
-            // 
-            this.repositoryItemImageEdit1.AutoHeight = false;
-            this.repositoryItemImageEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemImageEdit1.Name = "repositoryItemImageEdit1";
-            // 
-            // repositoryItemPictureEdit1
-            // 
-            this.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1";
-            // 
-            // repositoryItemPictureEdit2
-            // 
-            this.repositoryItemPictureEdit2.Name = "repositoryItemPictureEdit2";
-            // 
-            // FoodName
-            // 
-            this.FoodName.Caption = "Tên món";
-            this.FoodName.FieldName = "FoodName";
-            this.FoodName.Name = "FoodName";
-            this.FoodName.Visible = true;
-            this.FoodName.VisibleIndex = 0;
-            // 
-            // Funit
-            // 
-            this.Funit.Caption = "Đơn vị tính";
-            this.Funit.FieldName = "FUnit";
-            this.Funit.Name = "Funit";
-            this.Funit.Visible = true;
-            this.Funit.VisibleIndex = 1;
-            // 
-            // FPrice
-            // 
-            this.FPrice.Caption = "Giá (VNĐ)";
-            this.FPrice.FieldName = "FPrice";
-            this.FPrice.Name = "FPrice";
-            this.FPrice.Visible = true;
-            this.FPrice.VisibleIndex = 2;
-            // 
             // ucUpdate1
             // 
             this.ucUpdate1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -225,16 +225,17 @@ namespace iCafe.Userform
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "frmBookTable_FoodAdd";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "iCafe - Project";
             ((System.ComponentModel.ISupportInitialize)(this.spinQuantity.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookFood.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookFGroup.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picFood.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookFGroup.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFood.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
