@@ -74,7 +74,7 @@ namespace iCafe.Userform
                 var strUserName = txtusername.Text.Trim();
                 var strPassword = txtpw.Text;
 
-                var objUser = new userController(m_objConnection, m_objSecurity);
+                var objUser = new UserController(m_objConnection, m_objSecurity);
                 objUser.Checklogin(strUserName, strPassword);
                 if (m_objSecurity._LoginSuccess)
                 {

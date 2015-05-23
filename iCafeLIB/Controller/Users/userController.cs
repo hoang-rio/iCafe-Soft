@@ -6,21 +6,21 @@ using iCafeLIB.Models.BaseUntils;
 
 namespace iCafeLIB.Controller.Users
 {
-    public class userController
+    public class UserController
     {
         private const string SP_CHECK_LOGIN = "SP_CHECK_LOGIN";
         private readonly ModelsInfo m_objModelinfo;
         private readonly SecurityContext m_objSecurity;
         private SqlConnection m_objConnection;
 
-        public userController(SqlConnection objConnection, SecurityContext objSecurity)
+        public UserController(SqlConnection objConnection, SecurityContext objSecurity)
         {
             m_objConnection = objConnection;
             m_objSecurity = objSecurity;
             m_objModelinfo = new ModelsInfo(objConnection);
         }
 
-        public userController(SqlConnection objConnection)
+        public UserController(SqlConnection objConnection)
         {
             m_objConnection = objConnection;
             m_objModelinfo = new ModelsInfo(objConnection);

@@ -30,7 +30,7 @@ namespace iCafe
         private ModelsInfo m_objControllers;
         private SecurityContext m_objSecurity;
         private Services m_objServices;
-        private userController m_objUserController;
+        private UserController m_objUserController;
         private bool NightMode;
 
         public frmMain()
@@ -80,7 +80,7 @@ namespace iCafe
                 m_objConnection = m_objServices.getConnection();
                 m_objControllers = new ModelsInfo(m_objConnection);
                 m_objSecurity = new SecurityContext();
-                m_objUserController = new userController(m_objConnection, m_objSecurity);
+                m_objUserController = new UserController(m_objConnection, m_objSecurity);
             }
             catch (SqlException exception)
             {

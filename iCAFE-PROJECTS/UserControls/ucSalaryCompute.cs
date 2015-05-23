@@ -82,7 +82,7 @@ namespace iCafe.UserControls
         {
             try
             {
-                var sl = new SalaryController(mobjConnection, mobjSecurity);
+                var sl = new SalaryComputeController(mobjConnection, mobjSecurity);
                 gridControl1.DataSource = sl.GetAll(DateTime.Now.Month, DateTime.Now.Year);
             }
             catch (Exception exception)
@@ -103,7 +103,7 @@ namespace iCafe.UserControls
             }
             try
             {
-                var sl = new SalaryController(mobjConnection, mobjSecurity);
+                var sl = new SalaryComputeController(mobjConnection, mobjSecurity);
                 gridControl1.DataSource = sl.GetAll(int.Parse(cbMonth.SelectedItem.ToString()),
                     int.Parse(cbYear.SelectedItem.ToString()));
             }

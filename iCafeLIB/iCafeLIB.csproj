@@ -77,7 +77,7 @@
     <Compile Include="Controller\Customer\CustomerController.cs" />
     <Compile Include="Controller\Employee\BonusPunishController.cs" />
     <Compile Include="Controller\Employee\EmployeeController.cs" />
-    <Compile Include="Controller\Employee\SalaryController.cs" />
+    <Compile Include="Controller\Employee\SalaryComputeController.cs" />
     <Compile Include="Controller\Employee\WorkShiftController.cs" />
     <Compile Include="Controller\Event\EventController.cs" />
     <Compile Include="Controller\Food\FoodController.cs" />
@@ -96,12 +96,10 @@
     <Compile Include="Controller\Security\SecurityContext.cs" />
     <Compile Include="Controller\Table\BookTableController.cs" />
     <Compile Include="Controller\Table\TableController.cs" />
-    <Compile Include="Controller\Users\userController.cs" />
+    <Compile Include="Controller\Users\UserController.cs" />
     <Compile Include="Controller\Zone\ZoneController.cs" />
     <Compile Include="Models\BaseUntils\ConnectionObjects.cs" />
-    <Compile Include="Models\BaseUntils\imgEntitys.cs" />
     <Compile Include="Models\BaseUntils\ModelsInfo.cs" />
-    <Compile Include="Models\BaseUntils\NameServers.cs" />
     <Compile Include="Models\DatasetEn\iCafeDataEn.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

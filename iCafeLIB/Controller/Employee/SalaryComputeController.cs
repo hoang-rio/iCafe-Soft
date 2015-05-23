@@ -6,7 +6,7 @@ using iCafeLIB.Models.BaseUntils;
 
 namespace iCafeLIB.Controller.Employee
 {
-    public class SalaryController
+    public class SalaryComputeController
     {
         private const string SP_SALARY_PERMONTH = "SP_SALARY_PERMONTH";
         private const string SP_SALARY_OVERTIME = "SP_SALARY_OVERTIME";
@@ -14,7 +14,7 @@ namespace iCafeLIB.Controller.Employee
         private readonly ModelsInfo mobjModelsInfo;
         private readonly SecurityContext mobjSecurity;
 
-        public SalaryController(SqlConnection objConnection, SecurityContext objSecurityContext)
+        public SalaryComputeController(SqlConnection objConnection, SecurityContext objSecurityContext)
         {
             mobjConnection = objConnection;
             mobjSecurity = objSecurityContext;
