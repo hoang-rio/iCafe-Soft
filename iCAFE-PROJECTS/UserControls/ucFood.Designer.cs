@@ -36,7 +36,7 @@
             this.FPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FImage = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemImageEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageEdit();
-            this.ucBaseController1 = new iCafe.BaseControl.ucBaseController();
+            this.ucBaseController1 = new iCafe.BaseControls.ucBaseController();
             this.FGrName = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -188,7 +188,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn FPrice;
         private DevExpress.XtraGrid.Columns.GridColumn FImage;
         private DevExpress.XtraEditors.Repository.RepositoryItemImageEdit repositoryItemImageEdit1;
-        private BaseControl.ucBaseController ucBaseController1;
+        private BaseControls.ucBaseController ucBaseController1;
         private DevExpress.XtraGrid.Columns.GridColumn FGrName;
 
     }

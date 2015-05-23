@@ -1,4 +1,4 @@
-﻿namespace iCafe.BaseControl
+﻿namespace iCafe.BaseControls
 {
     partial class ucBaseController
     {

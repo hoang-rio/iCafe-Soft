@@ -2,7 +2,7 @@
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
-using iCafe.BaseControl;
+using iCafe.BaseControls;
 
 namespace iCafe.UserControls
 {
@@ -34,7 +34,7 @@ namespace iCafe.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucBaseController1 = new iCafe.BaseControl.ucBaseController();
+            this.ucBaseController1 = new iCafe.BaseControls.ucBaseController();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridEvent = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.EventName = new DevExpress.XtraGrid.Columns.GridColumn();

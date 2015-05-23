@@ -2,7 +2,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
-using iCafe.BaseControl;
+using iCafe.BaseControls;
 
 namespace iCafe.UserControls
 {

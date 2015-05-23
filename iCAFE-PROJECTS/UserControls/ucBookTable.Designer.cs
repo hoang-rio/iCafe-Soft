@@ -5,7 +5,7 @@ using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraTab;
-using iCafe.BaseControl;
+using iCafe.BaseControls;
 
 namespace iCafe.UserControls
 {
@@ -76,7 +76,7 @@ namespace iCafe.UserControls
             this.Deposit = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NumPeople = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CusPhone = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ucBaseController2 = new iCafe.BaseControl.ucBaseController();
+            this.ucBaseController2 = new iCafe.BaseControls.ucBaseController();
             this.groupViewTable = new DevExpress.XtraEditors.GroupControl();
             this.tabTable1 = new DevExpress.XtraTab.XtraTabControl();
             this.tabSantruoc = new DevExpress.XtraTab.XtraTabPage();

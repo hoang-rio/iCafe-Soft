@@ -2,7 +2,7 @@
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
-using iCafe.BaseControl;
+using iCafe.BaseControls;
 
 
 namespace iCafe.UserControls
@@ -35,7 +35,7 @@ namespace iCafe.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucBaseController1 = new iCafe.BaseControl.ucBaseController();
+            this.ucBaseController1 = new iCafe.BaseControls.ucBaseController();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridBallotGood = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.CreatTime = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -141,7 +141,7 @@ namespace iCafe.UserControls
 
         #endregion
 
-        private BaseControl.ucBaseController ucBaseController1;
+        private BaseControls.ucBaseController ucBaseController1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridBallotGood;
         private DevExpress.XtraGrid.Columns.GridColumn CreatTime;

@@ -2,7 +2,7 @@
 using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
 
-namespace iCafe.BaseControl
+namespace iCafe.BaseControls
 {
     public partial class ucBaseController : XtraUserControl
     {
@@ -28,8 +28,7 @@ namespace iCafe.BaseControl
 
         private void btnEdit_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (PressEdit != null)
-                PressEdit(sender, null);
+            if (PressEdit != null)PressEdit(sender, null);
         }
 
         private void btnXoa_ItemClick(object sender, ItemClickEventArgs e)

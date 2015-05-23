@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucBaseController1 = new iCafe.BaseControl.ucBaseController();
+            this.ucBaseController1 = new iCafe.BaseControls.ucBaseController();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridImportExport = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Time = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -148,7 +148,7 @@
 
         #endregion
 
-        private BaseControl.ucBaseController ucBaseController1;
+        private BaseControls.ucBaseController ucBaseController1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridImportExport;
         private DevExpress.XtraGrid.Columns.GridColumn Time;

@@ -2,7 +2,7 @@
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
-using iCafe.BaseControl;
+using iCafe.BaseControls;
 
 namespace iCafe.UserControls
 {
@@ -35,7 +35,7 @@ namespace iCafe.UserControls
         private void InitializeComponent()
         {
             DevExpress.XtraGrid.Columns.GridColumn CusPhone;
-            this.ucBaseController1 = new iCafe.BaseControl.ucBaseController();
+            this.ucBaseController1 = new iCafe.BaseControls.ucBaseController();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.CusName = new DevExpress.XtraGrid.Columns.GridColumn();
